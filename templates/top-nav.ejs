@@ -1,0 +1,34 @@
+<ul>
+  <li class="bold_dark_montSerra" style="font-size:14px;" title="Solde de votre porte-monnaie"><a href="../wallet" id="user_balance"></a></li>
+  <li><a target="_blank" href="../faq">Aide</a></li>
+
+  <li class="dropdwn-bell notification-bell dropdown-toggle">
+    <svg class="dropbutton" xmlns="http://www.w3.org/2000/svg" fill="#121435" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+    </svg>
+    <div class="dropdwn-bell-content" id="div_notification_course">
+      <div id="courses_block"></div>
+      <div id="div_display_all_courses" class="div_see_all_notif">
+        <a class="link_see_all_courses" href="../history">
+          <p class="regular_blue_openSans" style="font-size: 12px;">Historique des courses</p>
+        </a>
+      </div>
+    </div>
+  </li>
+
+  <li class="dropdwn">
+    <svg class="dropbutton" xmlns="http://www.w3.org/2000/svg" fill="#121435" height="24" viewBox="0 0 24 24" width="24" style="&#10; &#10;">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+      <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+    <div class="dropdwn-content">
+      <a href="../profile" class="testa">Mon compte</a>
+      <a href="../logout" class="deconnexion">Déconnexion</a>
+    </div>
+  </li>
+</ul>
+
+<script>
+  var balanceUser = Number("<%= balance %>");
+  document.getElementById("user_balance").innerHTML = balanceUser.toFixed(2) + '&euro;';
+</script>

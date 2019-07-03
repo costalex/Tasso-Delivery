@@ -1,0 +1,65 @@
+<nav class="balance_wallet">
+  <li class="bold_dark_montSerra" style="font-size:14px;" title="Solde de votre porte-monnaie">
+    <a href="../wallet" id="responsive_user_balance"></a>
+  </li>
+</nav>
+<nav class="responsive-top-nav">
+  <li class="dropdwn-bell notification-bell dropdown-toggle">
+    <svg class="dropbutton" xmlns="http://www.w3.org/2000/svg" fill="#121435" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+    </svg>
+    <div class="dropdwn-bell-content" id="div_notification_course">
+      <div id="responsive_courses_block"></div>
+      <div id="div_display_all_courses" class="div_see_all_notif">
+        <a class="link_see_all_courses" href="../history">
+          <p class="regular_blue_openSans" style="font-size: 13px;">Historique des courses</p>
+        </a>
+      </div>
+    </div>
+  </li>
+</nav>
+<nav class="responsive-menu">
+  <ul>
+    <li><a href="../accueil">Accueil</a></li>
+    <li><a href="../profile">Mon compte</a></li>
+    <li><a href="../history">Mes commandes</a></li>
+    <li><a href="../wallet">Portemonnaie</a></li>
+    <li><a href="../entreprise">Compte société</a></li>
+    <li><a target="_blank" href="../faq">Aide</a></li>
+    <li><a href="../accueil">Commander</a></li>
+    <li><a href="../logout">Deconnexion</a></li>
+  </ul>
+</nav>
+
+<button class="hamburger"><img width="23px" height="23px" src="../img/menu/burger.svg"/></button>
+<button class="cross"><img width="23px" height="23px" src="../img/menu/cross.svg"/></button>
+
+
+<script type="text/javascript" src="../script/display_responsive_notif_bell.js"></script>
+<script type="text/javascript" src="../script/display_notif_bell.js"></script>
+<script type="text/javascript">
+count = 0;
+function notif() {
+  var theUrl = "/notification";
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var res = JSON.parse(xhr.responseText);
+      display_responsive_notif(res.courses, res.limit, count);
+      display_notif(res.courses, res.limit, count);
+      count = 1;
+    }
+  }
+  xhr.open('GET', theUrl, true);
+  xhr.send();
+}
+notif();
+  setInterval(function(){
+    notif();
+  },30000);
+
+</script>
+<script>
+  var balanceUser = Number("<%= balance %>");
+  document.getElementById("responsive_user_balance").innerHTML = balanceUser.toFixed(2) + '&euro;';
+</script>
