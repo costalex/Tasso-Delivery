@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organiser une course - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <% include ../../public/templates/script-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9 order_section">
+        <% if (message.length > 0 && type == "error") { %>
+          <div id="alert-div" class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <% if (message.length > 0 && type == "success") { %>
+          <div id="alert-success-div" class="alert alert-success"><%= message %></div>
+        <% } %>
+
+            <h1 class="regular_blue_montSerra" style="font-size: 18px">Organiser une course</h1> <!-- OU section-nav -->
+            <main class="row account_div board">
+
+              <nav class="board-nav">
+                <ul class="nav nav-tabs account_nav">
+                  <li class="active"><a class="a-link" data-toggle="tab" href="#simple_course">Simple</a></li>
+                  <!-- <li><a class="a-link" data-toggle="tab" href="#multi_course">Multi</a></li> -> Decommenter cette ligne lors de l'implementation de la course multi-->
+                </ul>
+              </nav>
+
+              <div class="tab-content">
+                <div id="simple_course" class="tab-pane fade in active">
+                  <div class="col-sm-6 col-md-6 border_sender"> <!-- Coordonnees expediteur -->
+                    <h1 class="regular_blue_montSerra" style="font-size: 14px" align="center">Retrait</h1>
+                    <form name="simple_command_form" id="simple_command_form" method="post" onsubmit="return place_order()" action="/accueil">
+                      <div id="origin_div" class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="logo_sender_address"><img src="img/order/sender_address.svg" name="sender_address" alt="sender_address"/></span>
+                          <input type="text" class="form-control command_input" placeholder="Adresse de retrait" id="origin" name="sender_address" value="<%= sender_address %>">
+                        </div>
+                      </div>
+                      <div class="input-group double-input">
+                        <span class="input-group-addon" id="logo_sender_name"><img src="img/order/sender_name.svg" name="sender_name" alt="sender_name"/></span>
+                        <input type="text" placeholder="Pr&eacute;nom" class="form-control command_input_top" id="sender_firstname" name="sender_firstname" alt="sender_firstname" value="<%= sender.firstname %>"/>
+                        <input type="text" placeholder="Nom" class="form-control hide_left_border" id="sender_lastname" name="sender_lastname" alt="sender_lastname" value="<%= sender.lastname %>"/>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon input-group-addon_double" id="logo_sender_phone"><img src="img/order/sender_phone.svg" name="sender_phone" alt="sender_phone"/></span>
+                          <input type="text" class="form-control command_input_bot" placeholder="T&eacute;l&eacute;phone exp&eacute;diteur" id="sender_phone" name="sender_phone" value="<%= sender.phone %>"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <!-- Div vide permettant de remplir le placeholder du texte area -->
+                        <div class="input_note" id="description-placeholder_sender"></div>
+                        <!-- Et voici le textarea vide -->
+                        <textarea rows="6" id="description_sender" class="form-control command_input" name="description_sender" alt="description_sender" ><%= sender.instruction %></textarea>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 border_recipient"> <!-- Coordonnees destinataire -->
+                      <h1 class="regular_blue_montSerra" style="font-size: 14px" align="center">Livraison</h1>
+                      <div id="destination_div" class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="logo_recipient_address"><img src="img/order/recipient_address.svg" name="recipient_address" alt="recipient_address"/></span>
+                          <input type="text" class="form-control command_input" id="destination" name="recipient_address" placeholder="Adresse de livraison" value="<%= recipient_address %>"/>
+                        </div>
+                      </div>
+                      <div class="input-group double-input">
+                        <span class="input-group-addon" id="logo_recipient_name"><img src="img/order/recipient_name.svg" name="logo_recipient_name" alt="recipient_name"/></span>
+                        <input type="text" placeholder="Pr&eacute;nom" class="form-control command_input_top" id="recipient_firstname" name="recipient_firstname" alt="recipient_firstname" value="<%= recipient.firstname %>"/>
+                        <input type="text" placeholder="Nom" class="form-control hide_left_border" id="recipient_lastname" name="recipient_lastname" alt="recipient_lastname" value="<%= recipient.lastname %>"/>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon input-group-addon_double" id="logo_recipient_phone"><img src="img/order/sender_phone.svg" name="logo_recipient_phone" alt="recipient_phone"/></span>
+                          <input type="text" class="form-control command_input_bot" id="recipient_phone" placeholder="T&eacute;l&eacute;phone destinataire" name="recipient_phone" value="<%= recipient.phone %>">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <!-- Div vide permettant de remplir le placeholder du texte area -->
+                        <div class="input_note" id="description-placeholder_recipient"></div>
+                        <!-- Textarea que l'on va remplir grace a la div au dessus-->
+                        <textarea rows="6" id="description_recipient" class="form-control command_input" name="description_recipient" alt="description_recipient"><%= recipient.instruction %></textarea>
+                      </div>
+                      <div class="input-group double-input">
+                        <p class="bold_dark_montSerra" style="font-size:12px">Remise s&eacute;curis&eacute;e : </p>
+                        <p class="regular_grey_MontSerra" style="font-size:10px"> &Agrave; activer seulement si le destinataire est </br> en mesure de transmettre le code au coursier.</p>
+                        <span class="input-group-addon ui span_checkbox"><input type="checkbox" id="secure_code_option" name="secure_code_option" onclick="order_specifications()"/><label for="secure_code_option"></br></label></span>
+                      </div>
+                      <div class="input-group double-input padding_checkbox">
+                        <p class="bold_dark_montSerra" style="font-size:12px">D&eacute;p&ocirc;t contre signature : </p>
+                        <span class="input-group-addon ui span_checkbox"><input type="checkbox" id="signature_option" name="signature_option" onclick="order_specifications()"/><label for="signature_option"></br></label></span>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-ms-12 border_tab_order_button" align="center">
+                    </br>
+                    <a class="hidden_link"><button type="edit_button" id="command_button" class="btn blue_lg_button">COMMANDER</button></a>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <div id="multi_course" class="tab-pane fade">
+            <!-- A remplir sur le meme modele que la course simple -->
+          </div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyC9OlnDVBjsKhJXrbvRBup_BJ6208mYrRc"></script>
+  <script type="text/javascript" src="script/multi-line_note_block.js"></script>
+  <script type="text/javascript" src="script/address_autocomplete.js"></script>
+  <script type="text/javascript" src="script/order_specifications.js"></script>
+  <script type="text/javascript" src="script/place_order.js"></script>
+</body>
+</html>

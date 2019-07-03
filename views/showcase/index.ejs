@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil - Tasso, livraison de proximité rapide et sécurisée</title>
+    <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+    <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+    <meta property="title" content="Tasso, service coursier digital pour professionnels."/>
+    <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+    <meta property="og:url" content="http://www.tassodelivery.com/"/>
+    <% include ../../public/templates/bootstrap-css-links.html %>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+    <% include ../../public/templates/script-links-showcase.html %>
+    <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+    <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+  </head>
+
+  <body>
+
+    <div class="windshield">
+      <div class="windshield-pattern"></div>
+    </div>
+
+    <div class="wrapper"> <!-- START WRAPPER -->
+
+      <% include ../../public/templates/menu.ejs %>
+      <% include ../../public/templates/responsive-menu-showcase.ejs %>
+
+      <div class="intro">
+            <h1>DÉCOUVREZ <span style="font-weight:600;">TASSO</span></h1>
+            <h2>Un service coursier fiable et serein à destination des professionnels.</h2>
+          </br>
+        </br>
+        <a href="./registration"><button class="btn red_button" type="button" name="button">Inscription</button></a>
+        <% if (message.length > 0 && type == "success") { %>
+          <div class="alert alert-success"><%= message %></div>
+          <% } %>
+          <% if (message.length > 0 && type == "error") { %>
+            <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+            <% if (message.length > 0 && type == "info") { %>
+              <div class="alert alert-info"><%= message %></div>
+              <% } %>
+        </div>
+
+        <section class="container-fluid engagements"> <!-- ENGAGEMENTS SECTION START -->
+          <div class="row"> <!-- ROW START -->
+            <h3 style="text-align:center;">Les engagements de Tasso</h3>
+              <div class="col-xs-12 col-sm-4 engagement">
+                <h4>Envoi</h4>
+                <p>Envoyer un dossier, un pli, des documents, une lettre, un contrat. Tant que le colis fait moins de 9kg, nos coursiers se chargent de tout.</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 engagement">
+                <h4>Rapidité</h4>
+                <p>Nous faisons de la rapidité notre métier. Votre colis sera livré 1h après la confirmation de votre commande.</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 engagement">
+                <h4>Sécurité</h4>
+                <p>Recevez une notification de confirmation de réception du colis par votre destinataire. Suivez votre colis à la trace. Paiement en ligne sécurisé.</p>
+              </div>
+          </div> <!-- END ROW -->
+        </section> <!-- ENGAGEMENTS SECTION END -->
+
+        <section class="container-fluid about-map"> <!-- ABOUT-MAP SECTION START -->
+          <div class="row"> <!-- ROW START -->
+            <div class="col-xs-12 col-sm-6">
+              <img src="img/showcase/map.svg" alt="Plan Europe - Bordeaux ville desservie par Tasso" class="map">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h4>Aujourd'hui à Bordeaux,<br>demain ailleurs en Europe</h4>
+              <p>Dans notre monde ultra-connecté, nous nous sommes habitués à ce que les informations circulent rapidement. Mais, parallèlement, le service postal à lui très peu gagné en efficacité et rapidité. Ce qui créé une fracture, en terme d’attente, entre envoi numérique et envoi physique.
+                <br><br>Tasso, a pour ambition de remédier à cela, en appliquant les mêmes exigences de rapidité et de facilité d’utilisation pour l’expédition d’un colis que l’envoi d’un document par courriel.
+                <br><br>Notre service coursier se limite à l’envoi d’un colis à l’intérieur d’une même métropole.
+                <br><br>Disponible sur Bordeaux Métropole.
+              </p>
+            </div>
+
+          </div> <!-- END ROW -->
+        </section> <!-- ABOUT-MAP SECTION END -->
+
+        <section class="container-fluid ccm"> <!-- CCM SECTION START (COMMENT ÇA MARCHE) -->
+          <div class="row"> <!-- ROW START -->
+              <h3>Comment fonctionne le service Tasso ?</h3>
+            <div class="col-xs-12 col-sm-4 card-container">
+              <div class="card">
+                <p>1</p>
+                <h4>Commandez une course</h4>
+                <p>Depuis l’application ou le site Tasso, renseignez l’adresse de collecte et celle de livraison. Choisissez des options, puis commandez.</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 card-container">
+              <div class="card">
+                <p>2</p>
+                <h4>Un coursier collecte le colis</h4>
+                <p>Vous êtes alerté 5 min avant l’arrivée du coursier à l’adresse de collecte. Une fois le colis récupéré par le coursier, la livraison se fera en 1h maximum.</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 card-container">
+              <div class="card">
+                <p>3</p>
+                <h4>Le coursier livre le colis</h4>
+                <p>Le destinataire est alerté de l’approche du coursier. Une fois le colis livré, vous recevrez du destinataire une confirmation de livraison et de réception.</p>
+              </div>
+            </div>
+            <div class="col-xs-12 question-faq">
+              <h4>Des questions ?</h4>
+              <a href="./faq"><button type="button" name="button">Accéder aux FAQ</button></a>
+            </div>
+          </div> <!-- END ROW -->
+        </section> <!-- CCM SECTION START -->
+
+        <section class="container-fluid avantages"> <!-- AVANTAGES SECTION START -->
+          <div class="row">
+              <h3>Pourquoi utiliser Tasso ?</h3>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Facile</h4>
+              <p>Commandez en ligne ou sur mobile. L’adresse de collecte et de livraison vous suffiront pour lancer une course.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Sécurisé et assuré</h4>
+              <p>Suivi en temps réel. Plis assurés par Allianz. Accusé de réception. Remise sécurisée. Sac coursier résistant aux aléas extérieurs. Paiement en ligne sécurisé.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Abordable</h4>
+              <p>À partir de 5.00€ par course de 3.5km, puis 1€/km supplémentaire, dans la limite de 8km. Pas de frais supplémentaire. Prix HT.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Rapide</h4>
+              <p>Livraison entre 30min et 1h. Alerte d’arrivée du coursier à l’adresse de collecte.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Horaires arrangeants</h4>
+              <p>Service disponible de 9h à 20h du lundi au vendredi.</p>
+            </div>
+            <div class="col-xs-6 col-sm-4 avantage">
+              <h4>Écologique</h4>
+              <p>À vélo ou à scooter, limitant l’empreinte écologique de votre livraison.</p>
+            </div>
+          </div> <!-- END ROW -->
+        </section> <!-- END SECTION -->
+
+        <section class="container-fluid confiance-apps"> <!-- CONFIANCE-APPS SECTION START -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 confiance">
+              <h3>Ils nous font confiance</h3>
+              <img src="img/showcase/adf_logo.jpg" alt="Logo Art De France" class="adf">
+              <img src="img/showcase/pairor_logo.jpg" alt="Logo Pair'Or">
+            </div>
+            <div class="col-xs-12 col-sm-6 apps">
+              <h3>Prochainement disponible sur</h3>
+              <img src="img/showcase/app_store_badge.svg" alt="Lien vers application mobile Tasso sur iOS">
+              <img src="img/showcase/google_play_badge.svg" alt="Lien vers application mobile Tasso sur Android">
+            </div>
+          </div> <!-- END ROW -->
+        </section> <!-- END CONFIANCE-APPS SECTION -->
+
+    </div> <!-- END WRAPPER -->
+
+  <% include ../../public/templates/footer.ejs %>
+  </body>
+</html>

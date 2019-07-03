@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Historique - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+    <% include ../../public/templates/script-links.html %>
+    <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+    <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9 order_section">
+        <nav class="board-nav">
+          <ul class="nav nav-tabs account_nav nav-title ">
+            <li class="active"><a class="a-link-title current_course" data-toggle="tab" href="#current_course">Courses en cours</a></li>
+            <li><a class="a-link-title ended_course" data-toggle="tab" href="#ended_course">Courses termin&eacute;es</a></li>
+          </ul>
+        </nav>
+        <main class="row prepaid_course_div board">
+          <div class="tab-content">
+            <div id="current_course" class="tab-pane fade in active">
+              <nav class="board-nav">
+                <ul class="nav nav-tabs account_nav">
+                  <li class="active"><a class="a-link" data-toggle="tab" href="#current_perso">Perso</a></li>
+                  <!-- <li><a class="a-link" data-toggle="tab" href="#current_entreprise">Entreprise</a></li> -->
+                </ul>
+              </nav>
+              <div class="tab-content">
+                <div id="current_perso" class="tab-pane fade in active">
+
+                </div>
+                <div id="current_entreprise" class="tab-pane fade div_no_current_course">
+
+                </div>
+              </div>
+            </div>
+            <div id="ended_course" class="tab-pane fade">
+              <nav class="board-nav">
+                <ul class="nav nav-tabs account_nav">
+                  <li class="active"><a class="a-link" data-toggle="tab" href="#ended_perso">Perso</a></li>
+                  <!-- <li><a class="a-link" data-toggle="tab" href="#current_entreprise">Entreprise</a></li> -->
+                </ul>
+              </nav>
+              <div class="tab-content">
+                <div id="ended_perso" class="tab-pane fade in active">
+
+                </div>
+                <div id="ended_entreprise" class="tab-pane fade div_no_current_course">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script type="text/javascript"  src="script/current_course_client.js"></script>
+  <script type="text/javascript">tabdynamique("<%= commandeactif %>", <%= commandeactiflength %>, 'current_perso');</script>
+  <script type="text/javascript">tabdynamique("<%= commandefinish %>", <%= commandefinishlength %>, 'ended_perso');</script>
+</body>
+</html>

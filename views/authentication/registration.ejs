@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscription - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/authentication.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".registration_password").click(function(){
+      $("[data-toggle='popover']").popover('show');
+    });
+    $("#password_popover").popover({
+      content: "<p class=\"password_popover\">Le mot de passe doit faire 6 caractères minimum et contenir au moins:</br>&emsp;- 1 majuscule</br>&emsp;- 1 minuscule</br>&emsp;- 1 chiffre</br>&emsp;</br></p>",
+      html: true,
+    });
+  });
+  </script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body class=authentication>
+  <div class="container-fluid page-wrap-home" style="padding-bottom: 0px;">
+    <div class="row">
+      <div align=left>
+        <div>
+          <a href="./"><img class="logo" src="../img/logo_tasso.svg" width="140" alt="Logo Tasso" /></a>
+        </div>
+      </div>
+      <div align="right" margin-right>
+        <a href="/"><h1 class="regular_dark_montSerra">Accueil</h1></a>
+      </div>
+    </div>
+  </br>
+  <div class="row" align="center">
+    <div class="registration_form" align="center">
+      <h1 class="regular_blue_montSerra" align="center">Inscription</h1>
+      <% if (message.length > 0 && type == "error") { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <% if (message.length > 0 && type == "success") { %>
+          <div class="alert alert-success"><%= message %></div>
+          <% } %>
+          <p class="regular_dark_openSans" style="font-size: 12px;">Une fois votre compte utilisateur créé, vous pourrez, dans la rubrique « Compte société », renseigner les informations relatives à votre entreprise.</p>
+          <form class="form-horizontal" name="registration_form" id="registration_form" onsubmit="return registration()" method="post">
+            <div id="divBlock1" class="col-sm-12 col-md-12 form-group">
+              <input id="registration_lastname" type="text" class="input_top" name="lastname" placeholder="Nom" required="true">
+              <input id="registration_firstname" type="text" class="input_middle" name="firstname" placeholder="Pr&eacute;nom" required="true">
+              <input id="registration_address" type="text" class="input_middle" name="address" placeholder="Adresse de facturation" required="true">
+              <input id="registration_profesion" type="text" class="input_bot" name="profesion" placeholder="Profession">
+            </div>
+            <div id="divBlock2" class="col-sm-12 col-md-12 form-group">
+              <input id="registration_phone" type="text" class="input_top" name="phone" placeholder="Mobile" required="true">
+              <input id="registration_email" type="text" class="input_bot" name="email" placeholder="Email" required="true">
+            </div>
+            <div id="div_password" class="col-sm-12 col-md-12 form-group">
+              <a href="#" data-toggle="popover" data-trigger="focus" id="password_popover" data-placement="bottom"> <!-- infos bulle requirement mdp-->
+                <input id="registration_password" type="password" class="input_top" name="password" placeholder="Mot de passe" required="true">
+              </a>
+              <input id="confirmation_password" type="password" class="input_bot" name="confirmation_password" placeholder="Confirmer mot de passe" required="true">
+            </div>
+            <div id="div_captcha" class="col-sm-12 col-md-12 form-group no_padding">
+              <div id="recaptcha_response" name="recaptcha_response" class="col-sm-12 col-ms-12 captcha_padding g-recaptcha" data-sitekey="6LekOzAUAAAAAHxGqHkCScAPzlzxlU2pqFvX39qb"></div>
+            </div>
+            <div id="cgu_block" class="col-sm-12 col-md-12 input-group double-input">
+              <div class="col-sm-2 col-md-2 checkbox">
+                <label><input type="checkbox" name="cgu_checkbox" id="cgu_checkbox"></label>
+              </div>
+              <div class="col-sm-10 col-md-10">
+                <a class="hidden_link" target="_blank" href="./cgu"><p class="regular_small_dark_openSans">J'accepte les conditions g&eacute;n&eacute;rales d'utilisation</p></a>
+              </div>
+            </div>
+            <div id="newsletter_block" class="col-sm-12 col-md-12 input-group double-input">
+              <div class="col-sm-2 col-md-2 checkbox">
+                <label><input type="checkbox" name="newsletter_checkbox" id="newsletter_checkbox"></label>
+              </div>
+              <div class="col-sm-10 col-md-10">
+                <p class="regular_small_dark_openSans" style="padding-top: 8px; padding-left: 10px;">Je m'inscris &agrave; la newsletter</p>
+              </div>
+            </div>
+
+            <div id="div_error_msg" class="col-sm-12 col-md-12 form-group">
+              <div>
+                <span id="span_error_msg" class="help-block"></span>
+              </div>
+            </div>
+
+          </br>
+          <div align="center" class="form-group">
+            <button id="registration_button" type="submit" class="btn blue_button">S'INSCRIRE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </br>
+  <div class="row" align="center">
+    <p class="regular_dark_openSans"> Nous nous servons de votre num&eacute;ro de t&eacute;l&eacute;phone </br> pour vous envoyer les confirmations de livraison.</p>
+  </br>
+  <p class="regular_dark_openSans"> Vous avez d&eacute;j&agrave; un compte ? </p>
+</div>
+<div class="row" align="center" style="margin-bottom: 10px;">
+  <a class="hidden_link" href="./login"><button type="submit" class="btn red_button">SE CONNECTER</button></a>
+</div>
+</div>
+<% include ../../public/templates/bootstrap-links.html %>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyC9OlnDVBjsKhJXrbvRBup_BJ6208mYrRc"></script>
+<script type="text/javascript" src="../script/registration.js"></script>
+<script type="text/javascript" src="../script/registration_address.js"></script>
+</body>
+</html>

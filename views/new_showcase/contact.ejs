@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasso - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels."/>
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="../script/showcase/OwlCarousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../script/showcase/OwlCarousel/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/showcase.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links-showcase.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+
+<body>
+
+  <div class="contact-windshield"></div>
+
+  <div class="wrapper"> <!-- START WRAPPER -->
+
+    <% include ../../public/templates/menu.ejs %>
+    <% include ../../public/templates/responsive-menu-showcase.ejs %>
+
+    <div class="contact-intro">
+      <h1>Une question ? Une demande ? Un problème ?</h1>
+      <h2>Nous sommes à votre écoute du Lundi au Vendredi,<br>de 9h à 20h au 06 59 55 93 91.</h2>
+      <% if (newsletter.length > 0 && type == "success") { %>
+        <div class="alert alert-success"><%= newsletter %></div>
+        <% } %>
+        <% if (newsletter.length > 0 && type == "error") { %>
+          <div class="alert alert-danger"><%= newsletter %></div>
+          <% } %>
+          <% if (newsletter.length > 0 && type == "info") { %>
+            <div class="alert alert-info"><%= newsletter %></div>
+            <% } %>
+          </div>
+
+          <section class="container-fluid formulaire-contact" align="center"> <!-- FORMULAIRE CONTACT START -->
+            <div class="row div_contact_form" align="center"> <!-- ROW START -->
+              <% if (message.length > 0 && type == "success") { %>
+                <div class="alert alert-success"><%= message %></div>
+                <% } %>
+                <% if (message.length > 0 && type == "error") { %>
+                  <div class="alert alert-danger"><%= message %></div>
+                  <% } %>
+                  <h2 style="22px; color: #0D97FF">Formulaire de contact</h2>
+                </br>
+                <form class="form-horizontal" action="" method="post" id="contact_form" onsubmit=" return send_msg_contact()">
+                  <div class="form-group">
+                    <div class="col-md-6 col-ms-6">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="lastname" name="lastname" placeholder="Nom" class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-ms-6">
+                      <input id="firstname" name="firstname" placeholder="Prénom" class="form-control" type="text">
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group" id="div_email">
+                    <div class="col-md-12 col-ms-12">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input id="email" name="email" placeholder="Adresse mail" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <div class="col-md-12 col-ms-12">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                        <input name="subject" placeholder="Objet" class="form-control" type="text">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Text area -->
+                  <div class="form-group" id="div_message">
+                    <div class="col-md-12 col-ms-12">
+                      <textarea id="message" class="form-control size_block_message" name="comment" placeholder="Message" rows="8"></textarea>
+                    </div>
+                  </div>
+                  <!-- Button -->
+                  <div class="form-group">
+                    <div class="col-md-12 col-ms-12 submit_contact_btn">
+                      <button type="submit" class="btn blue_button">Envoyer message</button>
+                    </div>
+                  </div>
+                </form>
+              </div> <!-- ROW END -->
+            </section> <!-- FORMULAIRE CONTACT END -->
+          </div> <!-- END WRAPPER -->
+          <% include footer.ejs %>
+          <script type="text/javascript" src="../script/send_msg_contact.js"></script>
+          <script type="text/javascript">
+          setTimeout(function() {
+            $('#alert-div').fadeOut('fast');
+            $('#alert-success-div').fadeOut('fast');
+          }, 4000); // <-- time in milliseconds
+          </script>
+        </body>
+        </html>

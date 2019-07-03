@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parrainage - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+      <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9">
+        <main class="row sponsorship_div" align="center">
+          <div class="col-sm-12 col-md-12 sponsor_ship_text">
+            <h1 class="regular_blue_montSerra" style="font-size: 24px;">Gagnez jusqu'&agrave; <strong>25&euro;</strong> de cr&eacute;dit course</h1>
+            <p class="regular_dark_montSerra" style="font-size: 18px;">en faisant d&eacute;couvrir Tasso &agrave; vos amis et coll&egrave;gues.</p>
+          </div>
+          <div class="col-sm-12 col-md-12 sponsor_ship_text">
+            <p class="regular_dark_montSerra" style="font-size: 18px;">Partagez le code suivant pour leur faire
+            </br>profiter de 10&euro; de cr&eacute;dit sur leur premi&egrave;re course : </p>
+          </div>
+          <div class="col-sm-12 col-md-12 sponsor_ship_text">
+            <h1 class="regular_blue_montSerra" style="font-size: 20px;"><%= codesponsor %></h1>
+          </div>
+          <div>
+            <p class="regular_dark_montSerra" style="font-size: 14px;">Dans la limite de 3 parrainages.
+            </br>Recevez vos cr&eacute;dits apr&egrave;s qu’ils aient r&eacute;alis&eacute;s leur premi&egrave;re course.</p>
+          </div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+</body>
+</html>

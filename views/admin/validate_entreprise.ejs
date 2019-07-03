@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Validation entreprise - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <% include ../../public/templates/script-links.html %>
+  <link rel="stylesheet" href="../css/admin.css"/>
+  <link rel="icon" type="image/png" href="../img/tasso_favicon.png">
+  <script type="text/javascript" src="../../script/admin_responsive-menu-script.js"></script>
+  <script type="text/javascript" src="../../script/jquery.counter.js"></script>
+</head>
+<body>
+
+  <a href="/admin/accueil" class="account-nav-logo"><img src="../img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/admin_top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/admin_responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/admin_side-nav.ejs %>
+      </nav>
+
+      <section class="col-md-9 col-sm-9">
+        <h1 class="regular_blue_montSerra" style="font-size: 18px">Comptes entreprise</h1> <!-- OU section-nav -->
+        <main class="row validate_entreprise_div">
+          <div class="tab-pane" id="entreprise_account_validated"></div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script type="text/javascript" src="../script/display_entreprise_to_validate.js"></script>
+  <script>list_entreprise(<%- JSON.stringify(company_validate) %>, "<%= nb_company_validate %>")</script>
+</body>
+</html>

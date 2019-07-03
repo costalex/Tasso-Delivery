@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil admin - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <% include ../../public/templates/script-links.html %>
+  <link rel="stylesheet" href="../css/admin.css"/>
+  <link rel="icon" type="image/png" href="../img/tasso_favicon.png">
+  <script type="text/javascript" src="../script/admin_responsive-menu-script.js"></script>
+</head>
+<body>
+
+  <a href="/admin/accueil" class="account-nav-logo"><img src="../img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/admin_top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/admin_responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/admin_side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9">
+        <h1 class="regular_blue_montSerra" style="font-size: 18px">Coursiers en temps réel</h1> <!-- OU section-nav -->
+        <main class="row map_div">
+          <script src="https://www.google.com/jsapi?.js"></script>
+          <div class="col-md-12 cols-sm-12 map_padding" id="courier_map"></div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC9OlnDVBjsKhJXrbvRBup_BJ6208mYrRc"></script>
+  <script type="text/javascript" src="../script/display_active_courier.js"></script>
+  <script type="text/javascript">
+  initMap();
+
+  var listCourier = [];
+  var tabmarker = [];
+  function fun() {
+    var tmp_tab = [];
+    var theUrl = "/admin/map";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var res = JSON.parse(xhr.responseText);
+        for (i = 0; i < res.len; i++) {
+          tmp_tab[i] = res.activeCourier[i].id;
+        }
+        for (i = 0; i < listCourier.length; i++) {
+          var tmp = 0;
+          for (j = 0; j < tmp_tab.length; j++) {
+            if (listCourier[i] == tmp_tab[j]) {
+              tmp = 1;
+              var lat_courier = res.activeCourier[j].gps.lat;
+              var lng_courier = res.activeCourier[j].gps.lng;
+              marker = new google.maps.LatLng(lat_courier, lng_courier);
+              if (tabmarker[listCourier[i]] != undefined || tabmarker[listCourier[i]] != '') {
+                tabmarker[listCourier[i]].setPosition(marker);
+                updateInfoWindows(tabmarker[listCourier[i]], map, res);
+              }
+            }
+          }
+          if (tmp != 1) {
+            tabmarker[listCourier[i]].setMap(null);
+          }
+        }
+        for (i = 0; i < tmp_tab.length; i++) {
+          var tmp = 0;
+          for (j = 0; j < listCourier.length; j++) {
+            if (tmp_tab[i] == listCourier[j]) {
+              tmp = 1;
+            }
+          }
+          if (tmp != 1) {
+            var lat_courier = res.activeCourier[i].gps.lat;
+            var lng_courier = res.activeCourier[i].gps.lng;
+            marker = new google.maps.LatLng(lat_courier, lng_courier);
+
+            markerCourier = new google.maps.Marker({
+              position: marker,
+              title: "Coursier",
+              icon: "../img/tasso_pin.svg",
+              map: map
+            }),
+            tabmarker[tmp_tab[i]] = markerCourier;
+          }
+        }
+        listCourier = tmp_tab;
+      }
+    }
+    xhr.open('GET', theUrl, true);
+    xhr.send();
+  }
+  fun();
+
+  var inter = setInterval(function(){
+    fun();
+  },100);
+
+  clearInterval(inter);
+
+  setInterval(function(){
+    fun();
+  },2000);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Villes - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links-showcase.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+
+<body>
+
+  <div class="villes-windshield"></div>
+
+  <div class="wrapper"> <!-- START WRAPPER -->
+
+    <% include ../../public/templates/menu.ejs %>
+    <% include ../../public/templates/responsive-menu-showcase.ejs %>
+
+    <div class="tarifs-intro">
+      <h1>AUJOURD'HUI À BORDEAUX.</h1>
+      <h2>Demain, en Europe.</h2>
+    </br>
+  </br>
+  <% if (message.length > 0 && type == "success") { %>
+    <div class="alert alert-success"><%= message %></div>
+    <% } %>
+    <% if (message.length > 0 && type == "error") { %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% } %>
+      <% if (message.length > 0 && type == "info") { %>
+        <div class="alert alert-info"><%= message %></div>
+        <% } %>
+        <a href="./registration"><button class="btn red_button" type="button" name="button">Inscription</button></a>
+      </div>
+
+      <section class="container-fluid secteur villes"> <!-- SECTEUR START -->
+        <h3>Secteurs desservis par Tasso à <span>Bordeaux</span></h3>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 map-bordeaux">
+            <img src="../img/showcase/maps-bordeaux.png" alt="Bordeaux, ville desservie par Tasso">
+          </div>
+          <div class="col-xs-12 col-sm-6 desserte-bordeaux">
+            <h4>Zones desservies</h4>
+            <ul>
+              <li>Intérieur et pourtour des boulevards</li>
+              <li>Bassins-à-Flot</li>
+              <li>Ravezies</li>
+              <li>Bordeaux Bastide</li>
+              <li>Mérignac</li>
+              <li>Talence</li>
+              <li>Bègles</li>
+              <li>Pessac</li>
+            </ul>
+          </div>
+          <p class="col-xs-12 col-sm-12">Le service est seulement disponible pour les adresses comprises dans la zone bleue.<br>Les coursiers opèrent seulement dans cette zone.</p>
+        </div>
+      </section> <!-- END SECTEUR -->
+
+      <section class="pas-desservi"> <!-- PAS DESSERVI START -->
+        <h3>Votre secteur n'est pas desservi ?</h3>
+        <p>Nous travaillons tous les jours à accroitre le nombre de quartiers et villes desservies tout en respectant nos engagements de qualité de service et de rapidité.
+          <br>Dites-nous quel secteur vous aimeriez voir être desservi par Tasso ou inscrivez-vous à la newsletter. </p>
+          <a href="./contact"><button type="button" name="button">CONTACTER</button></a>
+        </section> <!-- PAS DESSERVI END -->
+
+      </div> <!-- END WRAPPER -->
+
+      <% include ../../public/templates/footer.ejs %>
+    </body>
+    </html>

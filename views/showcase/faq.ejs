@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+<meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links-showcase.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+</head>
+
+<body>
+
+  <div class="contact-windshield"></div>
+  <% if (message.length > 0 && type == "success") { %>
+    <div class="alert alert-success"><%= message %></div>
+    <% } %>
+    <% if (message.length > 0 && type == "error") { %>
+      <div class="alert alert-danger"><%= message %></div>
+      <% } %>
+      <% if (message.length > 0 && type == "info") { %>
+        <div class="alert alert-info"><%= message %></div>
+        <% } %>
+  <div class="wrapper"> <!-- START WRAPPER -->
+
+    <% include ../../public/templates/menu.ejs %>
+    <% include ../../public/templates/responsive-menu-showcase.ejs %>
+
+    <section class="container-fluid formulaire-contact" >
+      <div class="row div_contact_form"> <!-- ROW START -->
+
+<div class="col-sm-12 col-md-12">
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Qu’est-ce que Tasso ?</strong></br>
+  Tasso est un service coursier digital à destination des professionnels et des entreprises,
+  permettant d’organiser directement sur notre site internet, la livraison de colis, de
+  documents et d’objets de moins de 9kg dans une même métropole, en moins d’1 heure.
+  Les options « Dépôt contre signature » et « Remise sécurisée », en plus de la possibilité de
+  suivre le déroulé de la course en direct depuis votre espace client, sont les garanties d'une
+  livraison en toute sécurité et en toute sérénité.
+  Des enveloppes opaques sont gratuitement mises à disposition des clients pour plus de
+  confidentialité. Tous les plis et les colis sont assurés par Allianz.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Comment effectuer une commande ?</strong></br>
+  Créez-vous un compte ou connectez-vous à votre espace personnel. Une fois connecté,
+  sur la page d’accueil, renseignez les champs des adresses de retrait et de livraison. Si
+  besoin, renseignez le nom, prénom et numéro de téléphone de l’expéditeur et du
+  destinataire. Ces champs sont nécessaire pour activer l’option "Remise sécurisée". L’option
+  gratuite "Dépôt contre signature" ne nécessite pas que les champs des identités de
+  l’expéditeur et du destinataire soient remplis, pour accélérer le processus d’identification du
+  destinataire par le coursier il est recommandé de les remplir. Vous pouvez apporter plus de
+  précision pour le coursier dans le champ commentaire. Puis cliquez sur le bouton
+  COMMANDER. Sur la page Récapitulatif, vérifiez les informations saisies, si besoin cliquez
+  sur les boutons MODIFIER ou ANNULER la course. Confirmez votre commande en
+  cliquant sur COMMANDER, vous recevrez en suivant un message de confirmation. Vous
+  serez alerté lorsqu’un coursier sera attitré à votre commande.
+  Attention, une fois la course confirmée, vous ne pourrez plus la modifier ni l’annuler.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Est-ce que je peux annuler une course ?</strong></br>
+  Une course peut être annulée gratuitement jusqu’à l’arrivée du coursier à l’adresse
+  d’enlèvement.
+  Si le colis à déjà été récupéré par un coursier, vous pouvez annuler la course, mais vous
+  devrez assumer le montant de la course. Le coursier ramènera le colis au point de retrait.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Est-ce que je peux modifier une course ?</strong></br>
+  Vous pouvez modifier une course jusqu’au récapitulatif de votre commande. Une fois la
+  course commandée, vous ne pourrez plus la modifier.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Ai-je besoin de renseigner tous les champs lors de la commande ?</strong></br>
+  Vous devez obligatoirement renseigner les champs des adresses, les autres champs
+  complémentaires permettent de rendre la course plus efficace et permet aux coursiers de
+  se déplacer plus rapidement.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Je n’ai pas de nouvelles de mon coursier ?</strong></br>
+  Veuillez contacter notre service client, muni du code de référence de la course.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >J’ai été prélevé d’un montant incorrect.</strong></br>
+  Si vous avez été prélevé d'un montant différent de celui prévu lors du récapitulatif de votre
+  commande veuillez nous contacter, muni du numéro de référence de la course pour
+  rapidement clarifier la situation.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Qui sont les coursiers ?</strong></br>
+  Les coursiers Tasso sont des indépendants auto-entrepreneurs qui, connectés à notre
+  plate-forme avec leur smartphone, assurent les livraisons. Vous souhaitez être coursier
+  chez Tasso ? Il vous suffit de remplir le <a href="./contact">formulaire suivant.</a></p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Tasso est-il disponible dans mon secteur ? Suis-je éligible ?</strong></br>
+  Le service est seulement disponible pour les adresses de retrait et de livraison se trouvent
+  dans la zone desservie.
+  Tasso est disponible à Bordeaux dans la zone indiqué sur le lien suivant : <a href="./villes">Zone desservies.</a>
+  Nous desservirons très prochainement Marseille, Paris et d’autres villes d’Europe.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Où peut-on envoyer un colis ?</strong></br>
+  Vous pouvez expédier un colis dont les adresses de retrait et de livraison se trouvent dans
+  les même zones desservies indiquées sur le lien suivant : <a href="./villes">Zone desservies.</a></p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Puis-je choisir l’heure de retrait et/ou de livraison ?</strong></br>
+  Non, vous ne pouvez pas choisir l’heure de retrait et livraison. Un coursier sera
+  immédiatement dépêché au point d’enlèvement après que vous ayez confirmé votre
+  demande de livraison. Passez commande seulement quand vous êtes prêt à envoyer un
+  colis.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Quels sont les horaires d’ouverture du service ?</strong></br>
+  Le service est disponible du lundi au vendredi de 9h à 20h.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Que puis-je envoyer ?</strong></br>
+  Vous pouvez envoyer tout types de colis, plis, documents, contrats, classeurs, plans, petits
+  objets, clefs etc. tant que ce n’est pas de l’alimentaire ni des animaux, envoyez ce que vous
+  voulez. Gardez en mémoire que les coursiers transporteront votre colis dans un sac-à-dos,
+  veillez que l’envoi fasse moins de 9kg.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Quelle sécurité offre Tasso comme méthode de livraison ?</strong></br>
+  Tous nos coursiers reçoivent une formation de base avant de commencer leur travail. Pour
+  chaque course, la photo, le prénom et le numéro de téléphone de votre coursier vous sont
+  communiqués. Vous pouvez le contacter directement. De plus, vous pouvez choisir 2
+  options de livraisons : « Dépôt contre signature », le destinataire dont vous avez renseigné
+  les coordonnées lors de la commande devra signer un e-reçu sur le smartphone du livreur
+  en plus de renseigner son nom et prénom, signifiant la bonne réception. « Remise
+  sécurisée », le destinataire dont vous avez renseigné les coordonnées lors de la
+  commande recevra par SMS un code à 6 chiffre qu’il devra remettre au coursier pour
+  réceptionner le colis. Vous serez ensuite notifié de la bonne réception du colis par le
+  destinataire. Vous avez, pendant toute la durée de la course, la possibilité de suivre le
+  l’acheminement de votre colis en direct depuis l’application mobile.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Puis-je contacter le coursier lorsque mon colis est en cours d’acheminement ?</strong></br>
+  Oui, vous pouvez contacter le coursier à tout moment. Vous pourrez le contacter
+  directement depuis l’application mobile ou sur le site web dans votre espace personnel
+  sous Mes commandes > Courses en cours.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Quel est l’encombrement maximum ?</strong></br>
+  Les coursiers transporteront votre colis dans un sac-à-dos, veillez que l’envoi fasse moins
+  de 9kg.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Qu’est-ce que Stripe ?</strong></br>
+  Stripe est un acteur majeur du paiement en ligne en toute sécurité depuis presque 10 ans.
+  Vous payez de manière traditionnelle avec votre carte bancaire. Ce partenariat avec Tasso
+  vous garantie une sécurité renforcée de vos informations bancaires.
+  </p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Quels moyens de paiement puis-je utiliser pour régler une course ?</strong></br>
+  Vous pouvez uniquement régler chaque course par carte bancaire via Stripe.
+  Pour économiser de l’argent et éviter à sortir votre carte bancaire à chaque course, pensez
+  à acheter un Forfait Premium ou un Forfait Entreprise, équivalent à 10 et 20 courses
+  prépayées. Chaque commande de course sera débitée de votre forfait.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Comment se réalise le paiement ?</strong></br>
+  Le paiement est réalisé à travers l'App et s'effectue uniquement une fois le service terminé.
+  Le glover demandera une signature lors de la livraison et à ce moment-là nous procèderons
+  au paiement du service et des achats s'il y en a.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Quels types de cartes bancaires acceptez-vous ?</strong></br>
+  Nous acceptons les cartes bancaires Visa, Mastercard et American Express</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Les informations de ma carte bancaire sont-elles sécurisées ?</strong></br>
+  Le système de paiement, Stripe, à travers notre application mobile est totalement sécurisé.
+  Afin d'assurer votre sécurité, nous ne gardons aucune donnée bancaire. Nous utilisons la
+  même plate-forme de paiement que des entreprises telles que Twitter, Deliveroo ou Drivy.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Mon coursier est arrivé en retard ai-je le droit à une compensation ?</strong></br>
+  Le temps de livraison indiqué lors de la commande de course est à titre indicatif et peut être
+  amené à varier, notamment à cause de la circulation. Vous pouvez néanmoins suivre la
+  progression de votre livraison en direct via l'application Tasso et sur notre site web :
+  <a href="./">www.tassodelivery.com</a></p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Mon coursier est en retard je n’ai pas de nouvelle de ma commande.</strong></br>
+  Veuillez contacter notre service client muni du numéro de référence de votre course.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Puis-je donne un pourboire aux coursiers ?</strong></br>
+  Libre à vous de donner des pourboires aux coursiers. Cependant ils ne vous en feront
+  jamais la demande.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Les colis transportés sont-ils assurés ?</strong></br>
+  Oui, nous possédons une assurance de responsabilité civile pour répondre à tout type
+  d’incident. De la même façon, les coursiers partenaire souscrivent à une assurance de
+  responsabilité professionnelle.</p>
+
+  <p class="regular_dark_montSerra" style="font-size: 11px;"><strong class="regular_blue_montSerra" style="font-size: 12px;" >Existe-t-il un support ?</strong></br>
+  Oui, dans le cas d’un imprévu que vous ne savez pas gérer, le support est toujours là pour
+  vous guider par téléphone ou par message. Le support est toujours accessible pendant les
+  horaires d’ouvertures du service. Du lundi au vendredi de 9h à 20h au 06 59 55 93 91.
+  </p>
+
+</div>
+
+      </div> <!-- ROW END -->
+    </section> <!-- FORMULAIRE CONTACT END -->
+  </div> <!-- END WRAPPER -->
+  <% include ../../public/templates/footer.ejs %>
+</body>
+</html>

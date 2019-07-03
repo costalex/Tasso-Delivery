@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Créer un compte société - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".entreprise_SIRET").click(function(){
+      $("[data-toggle='popover']").popover('show');
+    });
+    $("#SIRET_popover").popover({
+      content: "<p class=\"siret_popover\" align=\"center\">Le SIRET est un numéro unique à 14 chiffres, identifiant votre établissement</p>",
+      html: true,
+    });
+  });
+  </script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9 order_section">
+        <% if (message.length > 0 && type == "error") { %>
+          <div class="alert alert-error"><%= message %></div>
+          <% } %>
+        <main class="row entreprise_account_div">
+          <div id="div_no_entreprise_account_block1" class="col-sm-12 col-md-12 create_entreprise_account">
+            <form name="account_form" id="account_form" method="post" enctype="multipart/form-data" onsubmit="return check_entreprise_infos()">
+              <div class="form-group">
+                <h2 class="regular_dark_montSerra entreprise_no_margin" style="font-size: 20px;">Détails de la société</h2>
+                <div id="create_entreprise_name" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Nom de la société : <input id="entreprise_name" type="text" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_name %>" name="entreprise_name" value="" required="true"/></p>
+                </div>
+                <div id="create_entreprise_SIRET" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                  <a href="#" data-toggle="popover" data-trigger="focus" id="SIRET_popover" data-placement="bottom">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Numéro de SIRET : <input id="entreprise_SIRET" type="tel" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_SIRET %>" name="entreprise_SIRET" value="" required="true"/></p>
+                </div>
+                <div id="create_entreprise_sector" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Secteur d'activité : <input id="entreprise_sector" type="text" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_sector %>" name="entreprise_sector" value="" required="true"/></p>
+                </div>
+                <div id="create_entreprise_phone" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Téléphone : <input id="entreprise_phone" type="tel" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_phone %>" name="entreprise_phone" value="" required="true"></p>
+                </div>
+                <h2 class="regular_dark_montSerra entreprise_no_margin" style="font-size: 20px;">Adresse de facturation</h2>
+                <div id="create_entreprise_address" class="col-sm-12 col-md-12 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Adresse : <input id="entreprise_address" type="text" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_address %>" name="entreprise_address" value="" required="true"/></p>
+                </div>
+                <div id="create_entreprise_zipcode" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Code postal : <input id="entreprise_address_zipcode" type="tel" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_address_zipcode %>" name="entreprise_address_zipcode" value="" required="true"></p>
+                </div>
+                <div id="create_entreprise_city" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Ville : <input id="entreprise_address_city" type="text" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_address_city %>" name="entreprise_address_city" value="" required="true"></p>
+                </div>
+                <div id="create_entreprise_country" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Pays : <input id="entreprise_address_country" type="text" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_address_country %>" name="entreprise_address_country" value="" required="true"></p>
+                </div>
+                <div id="create_entreprise_email" class="col-sm-12 col-md-12 no_padding_entreprise_input">
+                  <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Email de facturation : <input id="entreprise_email" type="text" style="width: 40%;" class="create_entreprise_info_input_underline" placeholder="<% entreprise.entreprise_email %>" name="entreprise_email" value="" required="true"></p>
+                </div>
+                <div id="recaptcha_response" name="recaptcha_response" class="col-sm-12 col-ms-12 captcha_padding g-recaptcha" data-sitekey="6LekOzAUAAAAAHxGqHkCScAPzlzxlU2pqFvX39qb"></div>
+                <div class="col-sm-12 col-ms-12 button_create_entreprise no_padding_entreprise_input">
+                  <a class="hidden_link"><button type="submit" id="edit_button" class="btn blue_small_button">Créer la société</button></a>
+                </div>
+              </div>
+              </form>
+            </div>
+      </main>
+    </section>
+  </div> <!-- END ROW -->
+</div> <!-- END CONTAINER-FLUID -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="../script/entreprise_creation.js"></script>
+</body>
+</html>

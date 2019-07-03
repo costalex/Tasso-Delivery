@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+  <% include ../../public/templates/responsive-menu.ejs %>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+
+      <section class="col-sm-9">
+        <% if (message.length > 0 && type == "error") { %>
+          <div id="alert-div" class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <% if (message.length > 0 && type == "success") { %>
+          <div id="alert-success-div" class="alert alert-success"><%= message %></div>
+        <% } %>
+        <h1 class="regular_blue_montSerra" style="font-size: 14px">Mon compte</h1> <!-- OU section-nav -->
+        <main class="row account_div board">
+
+          <nav class="board-nav">
+            <ul class="nav nav-tabs account_nav">
+              <li class="active"><a class="a-link" data-toggle="tab" href="#generales_infos">Informations</a></li>
+              <li><a class="a-link" data-toggle="tab" href="#change_password">Changer le mot de passe</a></li>
+            </ul>
+          </nav>
+
+          <div class="tab-content">
+            <div id="generales_infos" class="tab-pane fade in active">
+              <div class="col-sm-3 col-md-3 photo_tab">
+                <img class="profile_picture" src="img/profil.png" alt="Photo de profil" name="profile_picture"/>
+              </div>
+              <div class="col-sm-5 col-md-4 border_tab_infos separator">
+                <form name="account_form" id="account_form" method="post">
+                  <div class="form-group">
+                    <p class="account_infos regular_dark_openSans" style="font-size: 14px">Nom : </br><input id="profile_lastname" type="text" class="infos_input" name="lastname" placeholder="<%= user.lastname %>"></p>
+                    <p class="account_infos regular_dark_openSans" style="font-size: 14px">Pr&eacute;nom : </br><input id="profile_firstname" type="text" class="infos_input" name="firstname" placeholder="<%= user.firstname %>"></p>
+                    <p class="account_infos regular_dark_openSans" style="font-size: 14px">T&eacute;l&eacute;phone : </br><input id="profile_phone" type="text" class="infos_input" name="phone" placeholder="<%= user.phone %>"></p>
+                    <p class="account_infos regular_dark_openSans" style="font-size: 14px">Profession : </br><input id="profile_profesion" type="text" class="infos_input" name="profesion" placeholder="<%= user.profesion %>"></p>
+                    <p class="account_infos regular_dark_openSans" style="font-size: 14px">Email : </br><input id="profile_email" type="text" class="infos_input" name="email" placeholder="<%= user.email %>"></p>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-md-5 border_tab_infos " align="center">
+                  <div class="form-group">
+                    <p class="account_infos regular_dark_openSans_uderline" style="font-size: 14px">Adresse d'exp&eacute;dition par d&eacute;faut :</br></br>
+                      <input id="profile_address" type="text" class="infos_input" name="address" placeholder="<%= user.address%>">
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-ms-12 save_profile_button">
+                  <a class="hidden_link"><button type="submit" id="edit_button" class="btn blue_button">Enregistrer les modifications</button></a>
+                </div>
+              </form>
+            </div>
+            <div id="change_password" class="tab-pane fade">
+              <div class="col-sm-12 col-md-12 border_tab_password">
+                <form class="form-horizontal" id="change_password_form" method="post" onsubmit="return change_password()">
+                  <div class="form-group">
+                  </br>
+                  <div id="div_current_password" class="form-group">
+                    <input class="form-control password_input" id="current_password" type="password" name="oldpass" placeholder="Mot de passe actuel" value="">
+                    <span id="span_current_password" class="help-block"></span>
+                  </div>
+                  <div id="div_new_password" class="form-group">
+                    <input class="form-control password_input" id="new_password" type="password" name="newpass" placeholder="Nouveau mot de passe" value="">
+                    <span id="span_new_password" class="help-block"></span>
+                  </div>
+                  <div id="div_confirm_new_password" class="form-group">
+                    <div>
+                      <input class="form-control password_input" id="confirm_new_password" type="password" name="confirm_new_password" placeholder="Confirmer mot de passe" value="">
+                      <span id="span_confirm_new_password" class="help-block"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12 border_tab_button">
+                  <button type="submit" class="btn blue_button" >Changer mot de passe </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div> <!-- END ROW -->
+</div> <!-- END CONTAINER-FLUID -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyC9OlnDVBjsKhJXrbvRBup_BJ6208mYrRc"></script>
+<script type="text/javascript" src="script/change_password.js"></script>
+<script type="text/javascript" src="script/edit_default_address.js"></script>
+<script type="text/javascript">
+setTimeout(function() {
+$('#alert-div').fadeOut('fast');
+$('#alert-success-div').fadeOut('fast');
+}, 3000); // <-- time in milliseconds
+</script>
+</body>
+</html>

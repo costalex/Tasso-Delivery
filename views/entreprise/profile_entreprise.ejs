@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compte société - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/design.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <% include ../../public/templates/script-links.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script type="text/javascript"  src="script/bootstrap-tabcollapse.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+
+  <a href="./accueil" class="account-nav-logo"><img src="img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9 order_section">
+        <% if (message.length > 0 && type == "warning") { %>
+          <div class="alert alert-warning"><%= message %></div>
+          <% } %>
+        <h2 class="regular_blue_montSerra" style="font-size: 14px;"><%= entreprise.details.name %></h2>
+        <main id="main_dashboard" class="row entreprise_account_div">
+
+          <nav class="board-nav">
+            <ul id="dashboard" class="nav nav-tabs responsive-tabs account_nav">
+              <li class="active"><a class="a-link entreprise" data-toggle="tab" href="#entreprise">Société</a></li>
+              <li><a class="a-link portemonnaie" data-toggle="tab" href="#portemonnaie">Portemonnaie</a></li>
+            </ul>
+          </nav>
+
+          <div class="tab-content">
+            <div id="entreprise" class="tab-pane fade in active entreprise_account_details">
+              <form name="account_form" id="account_form" method="post" onsubmit="return entreprise_edit_infos()">
+                <div class="form-group">
+                  <h2 class="regular_dark_montSerra entreprise_no_margin" style="font-size: 20px;">Détails de la société</h2>
+                  <div id="create_entreprise_name" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Nom de la société : <input id="entreprise_name" type="text" class="create_entreprise_info_input" name="entreprise_name" placeholder="<%= entreprise.details.name %>" disabled="disabled" /></p>
+                  </div>
+                  <div id="create_entreprise_SIRET" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Numéro de SIRET : <input id="entreprise_SIRET" type="text" class="create_entreprise_info_input" name="entreprise_SIRET" placeholder="<%= entreprise.details.siret %>" disabled="disabled"></p>
+                  </div>
+                  <div id="create_entreprise_sector" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Secteur d'activité : <input id="entreprise_sector" type="text" class="create_entreprise_info_input" name="entreprise_sector" placeholder="<%= entreprise.details.sector %>" disabled="disabled"></p>
+                  </div>
+                  <div id="create_entreprise_phone" class="col-sm-6 col-md-6 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Téléphone : <input id="entreprise_phone" type="tel" class="create_entreprise_info_input_underline" name="entreprise_phone" placeholder="<%= entreprise.details.phone %>"></p>
+                  </div>
+                </div>
+              </br>
+                <div class="form-group" style="margin-top: 10px;">
+                  <h2 class="regular_dark_montSerra entreprise_no_margin" style="font-size: 20px;">Adresse de facturation</h2>
+                  <div id="create_entreprise_name" class="col-sm-12 col-md-12 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Adresse : <input style="width: 80%;" id="entreprise_address" type="text" class="create_entreprise_info_input_underline" name="entreprise_address" placeholder="<%= entreprise.details.address_company %>" /></p>
+                  </div>
+                  <div id="create_entreprise_SIRET" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Code postal : <input id="entreprise_address_zipcode" type="text" class="create_entreprise_info_input_underline" name="entreprise_address_zipcode" placeholder="<%= entreprise.details.zipcode %>"></p>
+                  </div>
+                  <div id="create_entreprise_sector" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Ville : <input id="entreprise_address_city" type="text" class="create_entreprise_info_input_underline" name="entreprise_address_city" placeholder="<%= entreprise.details.city %>"></p>
+                  </div>
+                  <div id="create_entreprise_phone" class="col-sm-4 col-md-4 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Pays : <input id="entreprise_address_country" type="text" class="create_entreprise_info_input_underline" name="entreprise_address_country" placeholder="<%= entreprise.details.country %>"></p>
+                  </div>
+                  <div id="create_entreprise_phone" class="col-sm-12 col-md-12 no_padding_entreprise_input">
+                    <p class="create_entreprise_infos bold_dark_openSans" style="font-size: 14px;">Email : <input style="width: 80%;" id="entreprise_email" type="text" class="create_entreprise_info_input_underline" name="entreprise_email" placeholder="<%= entreprise.details.email %>"></p>
+                  </div>
+                  <div class="col-sm-12 col-ms-12 button_create_entreprise no_padding_entreprise_input">
+                    <a class="hidden_link" href="/entreprise/edit"><button type="submit" id="edit_button" class="btn blue_small_button">Enregistrer les modifications</button></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="portemonnaie" class="tab-pane">
+              <div class="col-sm-8 col-md-8">
+                <h2 class="regular_dark_montSerra entreprise_no_margin" style="font-size: 20px;">Solde du compte</h2>
+                <p id="wallet_balance" class="regular_dark_openSans" style="font-size: 36px"></p>
+              </div>
+              <div class="col-sm-4 col-md-4">
+              </div>
+          </div>
+        </div>
+      </main>
+      <div id="package_div" class="col-sm-12 col-md-12 row package_div" align="center">
+        <div class="col-sm-6 col-md-6">
+          <h1 class="regular_dark_openSans" style="font-size:28px;"><b><%= package1.name %></b></h1>
+          <p class="bold_blue_openSans" style="font-size:52px;"><%= package1.priceht %>&euro;*</p>
+
+          <div class="col-sm-12 col-md-12 buy_btn">
+            <form action="/charge/wallet/<%= package1.name %>" method="post">
+              <script
+              src = "https://checkout.stripe.com/checkout.js"
+              class = "stripe-button"
+              data-key = "pk_live_vRwyhWo7Dyv2vDGcWP7kYL34"
+              data-email = "<%= email%>"
+              data-name = "Tasso Delivery"
+              data-description = "Rechargement porte-monnaie"
+              data-currency = "eur"
+              data-locale = "fr"
+              data-amount = "<%= package1.stripe_price %>"
+              data-label = "RECHARGER"
+              data-zip-code = "true"
+              data-image = "img/tasso_emblem.svg"
+              ></script>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-sm-6 col-md-6 package_separator">
+          <h1 class="regular_dark_openSans" style="font-size:28px;"><b><%= package2.name %></b></h1>
+          <p class="bold_blue_openSans" style="font-size:52px;"><%= package2.priceht %>&euro;*</p>
+          <div class="col-sm-12 col-ms-12 buy_btn">
+            <form action="/charge/wallet/<%= package2.name %>" method="post">
+              <script
+              src = "https://checkout.stripe.com/checkout.js"
+              class = "stripe-button"
+              data-key = "pk_live_vRwyhWo7Dyv2vDGcWP7kYL34"
+              data-email = "<%= email%>"
+              data-name = "Tasso Delivery"
+              data-description = "Rechargement porte-monnaie"
+              data-currency = "eur"
+              data-locale = "fr"
+              data-amount = "<%= package2.stripe_price %>"
+              data-label = "RECHARGER"
+              data-zip-code = "true"
+              data-image = "img/tasso_emblem.svg"
+              ></script>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div id="infos_block" class="col-sm-12 col-md-12 infos_block">
+      <p class="italic_dark_openSans" style="font-size: 14px;">*Prix affichés hors taxe</p>
+    </br>
+    <p class="regular_dark_montSerra" style="font-size: 15px;"><span class="bold_blue_montSerra">Vous souhaitez payer par virement bancaire?</span> Contactez-nous par email: <u>contact@tassodelivery.com</u> ou via le chat (en bas à droite de votre fenêtre) pour que nous vous transmettions nos coordonnées bancaires.</p>
+    </div>
+      </div>
+    </section>
+  </div> <!-- END ROW -->
+</div> <!-- END CONTAINER-FLUID -->
+<script type="text/javascript" src="../script/entreprise_edit_infos.js"></script>
+<script type="text/javascript">
+$('#dashboard').tabCollapse();
+</script>
+<script>
+var hide_block = document.getElementById('entreprise');
+//console.log(hide_block.className);
+if (hide_block.className == "tab-pane fade in active entreprise_account_details") {
+  $(".package_div").hide();
+  $(".infos_block").hide();
+}
+
+$(".entreprise").click(function() {
+  $(".package_div").hide();
+  $(".infos_block").hide();
+});
+$(".portemonnaie").click(function() {
+  $(".package_div").show(200);
+  $(".infos_block").show(200);
+});
+</script>
+<script>
+var user_balance = Number("<%= balance %>");
+
+    document.getElementById("wallet_balance").innerHTML = user_balance.toFixed(2) + '&euro;';
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistiques - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <% include ../../public/templates/script-links.html %>
+  <link rel="stylesheet" href="../css/counter.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+  <link rel="icon" type="image/png" href="../img/tasso_favicon.png">
+  <script type="text/javascript" src="../script/admin_responsive-menu-script.js"></script>
+    <script type="text/javascript" src="../../script/jquery.counter.js"></script>
+</head>
+<body>
+
+  <a href="/admin/accueil" class="account-nav-logo"><img src="../img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/admin_top-nav.ejs %>
+  </nav>
+
+  <% include ../../public/templates/admin_responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/admin_side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9">
+        <h1 class="regular_blue_montSerra" style="font-size: 18px">Statistiques</h1> <!-- OU section-nav -->
+        <main class="row stat_div">
+          <div class="col-md-12 cols-sm-12" id="div_stat_course1">
+            <div class="col-md-4 cols-sm-4" id="div_current_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Courses en cours</h3>
+              <span id="current_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_no_taken_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Courses en attente</h3>
+              <span id="no_taken_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_terminated_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Courses finies</h3>
+              <span id="terminated_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+          </div>
+          <div class="col-md-12 cols-sm-12" id="div_stat_course2">
+            <div class="col-md-4 cols-sm-4" id="div_all_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total courses</h3>
+              <span id="all_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_all_monthly_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total courses mensuelles</h3>
+              <span id="all_monthly_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_all_daily_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total courses journalières</h3>
+              <span id="all_daily_courses_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+          </div>
+          <div class="col-md-12 cols-sm-12" id="div_stat_client">
+            <div class="col-md-4 cols-sm-4" id="div_all_daily_courses">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total clients</h3>
+              <span id="all_clients_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_all_monthly_clients">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total clients mensuels</h3>
+              <span id="all_monthly_clients_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_all_daily_clients">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total clients journaliers</h3>
+              <span id="all_daily_clients_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+          </div>
+          <div class="col-md-12 cols-sm-12" id="div_stat_package">
+            <div class="col-md-4 cols-sm-4" id="div_all_packages">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total packages mensuels</h3>
+              <span id="all_packages_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_entreprise_package">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total packages entreprise mensuels</h3>
+              <span id="all_entreprise_packages_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+            <div class="col-md-4 cols-sm-4" id="div_premium_package">
+              <h3 class="regular_blue_openSans" style="font-size: 15px">Total package premium mensuels</h3>
+              <span id="all_premium_packages_counter" class="counter counter-analog3" data-direction="up" data-format="999999" data-stop="10" data-interval="100">000000</span>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script type="text/javascript" src="../../script/display_stats.js"></script>
+  <script type="text/javascript">display_stats("<%= stats %>")</script>
+  <script>
+  $('.counter').counter({});
+  </script>
+</body>
+</html>

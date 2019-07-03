@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suivi de votre commande - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="../css/design.css"/>
+  <link rel="icon" type="image/png" href="../img/tasso_favicon.png">
+  <% include ../../public/templates/script-links.html %>
+  <script type="text/javascript" src="../script/responsive-menu-script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.min.js"></script>
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+<body>
+  <a class="account-nav-logo" href="./accueil"><img src="../img/logo_tasso.svg" alt="Tasso"></a>
+  <nav class="top-nav">
+    <% include ../../public/templates/top-nav.ejs %>
+  </nav>
+
+<% include ../../public/templates/responsive-menu.ejs %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-sm-3 side-nav nav flex-column regular_dark_montSerra">
+        <% include ../../public/templates/side-nav.ejs %>
+      </nav>
+
+      <section class="col-sm-9 order_section">
+        <main class="row recap_main board">
+          <div class="col-sm-6 col-md-6 map_padding">
+            <script src="https://www.google.com/jsapi?.js"></script>
+            <div class="col-sm-12 col-md-12" id="tracking_map"></div>
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <h1 class="regular_blue_montSerra" style="font-size: 16px;" align="center">Suivi de votre commande</h1>
+            <div class="recap_div_border">
+              <div align="left">
+                <p class="regular_blue_montSerra no-border" style="font-size: 16px;">Ref: <input class="regular_blue_montSerra no-border" style="font-size: 16px;" type="text" name="refcourse" value="<%= refcourse %>" readonly="true"/></p>
+                <p style="display:none;" id="option"> <%= option %></p>
+              </div>
+              <div class="input-group input_padding">
+                <input class="input_group_title regular_dark_montSerra" style="font-size:13px" type="text" value="Retrait" id="title_retrait" disabled="disabled" />
+              </div>
+              <div class="input-group input_padding">
+                <span class="no-border" id="logo_sender_address"><img src="../img/order/sender_address.svg" name="logo_sender_address" alt="logo_sender_address"/></span>
+                <input class="recap_input_address" id="sender_address" type="text" class="infos_input" name="sender_address" disabled="disabled" value="<%= senderaddress %>">
+              </div>
+              <div class="input-group double-input input_padding">
+                <span class="no-border" id="logo_recipient_name"><img src="../img/order/sender_name.svg" name="sender_name" alt="sender_name"/></span>
+                <input class="recap_input_border" type="text" placeholder="Pr&eacute;nom" id="sender_firstname" name="sender_firstname" alt="sender_firstname" disabled="disabled" value="<%= sender.firstname %>" >
+                <input class="recap_input_border" type="text" placeholder="Nom exp&eacute;diteur" id="sender_lastname" name="sender_lastname" alt="sender_lastname" disabled="disabled" value="<%= sender.lastname %>" >
+              </div>
+              <div class="input-group input_padding">
+                <span class="no-border" id="logo_sender_phone"><img src="../img/order/sender_phone.svg" name="sender_phone" alt="sender_phone"/></span>
+                <input class="recap_input_border" type="text" placeholder="T&eacute;l&eacute;phone exp&eacute;diteur" id="recap_sender_phone" name="sender_phone" alt="sender_phone" disabled="disabled" value="<%= sender.phone %>" >
+              </div>
+            </div>
+            <div class="recap_div_border">
+              <div class="input-group input_padding">
+                <input class="input_group_title regular_dark_montSerra" style="font-size:13px" type="text" value="Livraison" id="title_livraison" disabled="disabled"/>
+                <span align="right" class="no-border" id="logo_recipient_address"><img id="img_to_change" width="18px" height="18px" alt="recipient_address"></span>
+              </div>
+              <div class="input-group input_padding">
+                <span class="no-border" id="logo_recipient_address"><img src="../img/order/recipient_address.svg" name="recipient_address" alt="recipient_address"/></span>
+                <input class="recap_input_address" type="text" placeholder="Adresse de livraison" id="recipient_address" name="recipient_address" disabled="disabled" value="<%= recipientaddress %>">
+              </div>
+              <div class="input-group double-input input_padding">
+                <span class="no-border" id="logo_recipient_name"><img src="../img/order/recipient_name.svg" name="recipient_name" alt="recipient_name"/></span>
+                <input class="recap_input_border" type="text" placeholder="Pr&eacute;nom" id="recipient_firstname" name="recipient_firstname" alt="recipient_firstname" disabled="disabled" value="<%= recipient.firstname %>" >
+                <input class="recap_input_border" type="text" placeholder="Nom destinataire" id="recipient_lastname" name="recipient_lastname" alt="recipient_lastname" disabled="disabled" value="<%= recipient.lastname %>" >
+              </div>
+              <div class="input-group input_padding">
+                <span class="no-border" id="logo_recipient_phone"><img src="../img/order/sender_phone.svg" name="recipient_phone" alt="recipient_phone"/></span>
+                <input class="recap_input_border" type="text" placeholder="T&eacute;l&eacute;phone destinataire" id="recap_recipient_phone" name="recipient_phone" alt="recipient_phone" disabled="disabled" value="<%= recipient.phone %>"/>
+              </div>
+            </div>
+
+            <div id="tracking_order" class="track_div_infos_course">
+              <div  class="col-xs-3 col-md-3" id="div_paiement_success">
+                <img src="../img/notifications/paiement_success_on.svg" alt="payment validé" id="track_img_paiement_success" width="60px" height="80px"/>
+                <p class="regular_dark_openSans" style="font-size: 12px;" type="text" id="text_paiement_succes">Paiement validé !</p>
+              </div>
+              <div  class="col-xs-3 col-md-3" id="div_courier_accept_course">
+                <img src="../img/notifications/courier_accept_course_off.svg" alt="course prise par un coursier" id="track_img_courier_accept_course" width="60px" height="80px"/>
+                <p class="regular_dark_openSans" style="font-size: 12px;" type="text" id="text_courier_accept_course"></p>
+              </div>
+              <div  class="col-xs-3 col-md-3" id="div_take_package">
+                <img src="../img/notifications/take_package_off.svg" alt="Retrait" id="track_img_take_package_progress" width="60px" height="80px"/>
+                <p class="regular_dark_openSans" style="font-size: 12px;" type="text" id="text_take_package_progress"></p>
+              </div>
+              <div  class="col-xs-3 col-md-3" id="div_delivery_success">
+                <img src="../img/notifications/delivery_success_off.svg" alt="Livraison" id="track_img_delivery_success" width="60px" height="80px"/>
+                <p class="regular_dark_openSans" style="font-size: 12px;" type="text" id="text_delivery_success"></p>
+              </div>
+
+            </div>
+
+            <div id="div_infos_course" class="row track_recap_div_infos_course">
+              <div  class="col-xs-6 col-md-4" id="div_course_distance">
+                <p class="regular_dark_openSans" style="font-size: 13px;">Distance</p>
+                <div class="input-group">
+                  <span class="no-border" id="logo_clock"><img class="img_align_text" src="../img/order/clock.svg" name="logo_clock" alt="logo_clock" width="20px" height="20px"/></span>
+                  <input type="text" class="recap_infos_course_border" placeholder="distancecourse" id="course_distance" name="course_duration" disabled="disabled" value="<%= details.distance %>">
+                </div>
+              </div>
+              <div id="div_course_duration" class="col-xs-6 col-md-4">
+                <p class="regular_dark_openSans" style="font-size: 13px;">Dur&eacute;e</p>
+                <div class="input-group">
+                  <span class="no-border" id="logo_clock"><img class="img_align_text" src="../img/order/clock.svg" name="logo_clock" alt="logo_clock" width="20px" height="20px"/></span>
+                  <input type="text" class="recap_infos_course_border" placeholder="ur&eacute;e course" id="course_duration" name="course_duration" disabled="disabled" value="<%= details.estimatedtime %>">
+                </div>
+              </div>
+              <div id="div_course_price" class="col-xs-12 col-md-4" style="text-align: center">
+                <p class="regular_dark_openSans" style="font-size: 13px;">Prix HT</p>
+                <div class="input-group">
+                  <span class="no-border" id="logo_price"><img class="img_align_text" src="../img/order/euro.svg" name="logo_price" alt="logo_price" width="20px" height="20px"/></span>
+                  <input class="recap_infos_course_border" placeholer="prix" type="text" id="course_price" name="course_price" disabled="disabled" value=<%= details.price %> >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </main>
+      </form>
+    </section>
+    </div> <!-- END ROW -->
+  </div> <!-- END CONTAINER-FLUID -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyC9OlnDVBjsKhJXrbvRBup_BJ6208mYrRc"></script>
+  <script type="text/javascript" src="../script/change_img.js"></script>
+  <script type="text/javascript" src="../script/track_order.js"></script>
+  <script type="text/javascript" src="../script/updateMarker.js"></script>
+  <script type="text/javascript" src="../script/course_progression.js"></script>
+  <script type="text/javascript">
+  if ("<%= sender.phone %>" == "" || "<%= sender.phone %>" == " ") {
+    document.getElementById('recap_sender_phone').setAttribute("placeholder", "Téléphone expéditeur non renseigné.");
+  }
+  if ("<%= recipient.phone %>" == "" || "<%= recipient.phone %>" == " ") {
+    document.getElementById('recap_recipient_phone').setAttribute("placeholder", "Téléphone destinataire non renseigné.");
+  }
+  </script>
+  <script type="text/javascript">
+  initMap("<%=start.lat %>", "<%=start.lng %>", "<%=end.lat %>", "<%=end.lng %>");
+  createMarker("<%=start.lat %>", "<%=start.lng %>", "<%=end.lat %>", "<%=end.lng %>");
+  updateStep("<%=step %>");
+  var count = 0;
+  var tabmarker = [];
+
+  setInterval(function(){
+    track_order("<%= refcourse %>", count, tabmarker);
+  },5000);
+  </script>
+</body>
+</html>

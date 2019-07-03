@@ -1,0 +1,60 @@
+<footer>
+  <div class="container-fluid wrapper no_padding">
+    <section class="col-md-12" style="background-color: #162945; padding-top: 15px; padding-bottom: 30px; border-radius: 5px;">
+      <div class="col-md-12">
+        <h2 style="color: #FFFFFF; font-size: 24px;">Gagnez du temps. Livrez dès maintenant.</h2>
+      <h2 style="color: #FFFFFF; font-size: 18px;">Créez votre compte en quelques minutes.</h2>
+      <a href="./registration"><button class="btn blue_button" type="button" name="button">Démarrer</button></a>
+      </div>
+    </section>
+    <section class="col-md-12" style="padding-top: 30px;">
+      <div class="col-sm-12 col-xs-12 newsletter_div" align="center">
+        <h2style="font-size: 16px;">Inscrivez-vous à la newsletter pour être au courant des dernières nouveautés</h2>
+        <form id="register-newsletter" role="search" action="" method="post">
+          <input type="text" name="newsletter_mail" class="newsletter_input" placeholder="Saisissez votre adresse mail">
+          <button type="submit" class="btn newsletter_btn" style="font-size: 13px;">ENVOYER</button>
+        </form>
+      </div>
+    </section>
+    <section class="col-md-12" align="center">
+      <div class="col-xs-6 col-sm-4">
+        <h5>Liens</h5>
+        <ul>
+          <li><a href="./">Accueil</a></li>
+          <!--<li><a href="./tarifs">Tarifs</a></li>-->
+          <li><a href="./villes">Villes</a></li>
+          <li><a href="./about">À propos</a></li>
+          <li><a href="./faq">FAQ</a></li>
+
+          <!-- <li><a href="#">Presse</a></li> -->
+          <li><a href="./contact">Contactez-nous</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-sm-4">
+        <h5>Nous suivre</h5>
+        <ul>
+          <li><a href="https://www.facebook.com/tassodelivery/" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/Tassodelivery" target="_blank">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/company-beta/11154192" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <h5>Devenez coursier</h5>
+        <p>Devenez votre propre patron !<br>Revenu complémentaire attractif.</p>
+        <a href="./contact"><button class="btn blue_button" type="button" name="button">DEVENIR COURSIER</button></a>
+      </div>
+    </section>
+    <section class="col-md-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <p class="policies">©2017 Tasso SAS      <a href="./politique_confidentialite" class="policies-spacing">Politique de confidentialité</a>     <a href="./cgu">Conditions générales d’utilisation</a></p>
+      </div>
+    </section>
+  </div> <!-- END CONTAINER-FLUID -->
+</footer>
+<script type="text/javascript">
+var url_to_send = url;
+var form_to_send = document.getElementById('register-newsletter');
+form_to_send.setAttribute("action", url_to_send + '/newsletter');
+</script>
+<script src="script/cookiechoices.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function(event){cookieChoices.showCookieConsentBar('Ce site utilise des cookies pour vous offrir le meilleur service. En poursuivant votre navigation, vous acceptez l’utilisation des cookies.', 'J’accepte', 'En savoir plus', 'https://www.tassodelivery.com/politique_confidentialite');});</script>

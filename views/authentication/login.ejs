@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion - Tasso, livraison de proximité rapide et sécurisée</title>
+  <meta name="description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h.">
+  <meta property="og:description" content="Tasso : la livraison de proximité rapide et sécurisée, pour les professionnels et les entreprises. Envoyez des plis et petits objets à prix abordable en 1h."/>
+  <meta property="title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:title" content="Tasso, service coursier digital pour professionnels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.tassodelivery.com/img/tasso-delivery-europe.svg"/>
+  <meta property="og:url" content="http://www.tassodelivery.com/"/>
+  <% include ../../public/templates/bootstrap-css-links.html %>
+  <link rel="stylesheet" href="css/authentication.css"/>
+  <link rel="icon" type="image/png" href="img/tasso_favicon.png">
+  <script src="//code.tidio.co/ll6lr9ooths8g9hdxyozmwnknhnzu2l5.js"></script>
+</head>
+  <body class=authentication>
+    <div class="container-fluid page-wrap-home">
+      <div class="row">
+        <div align=left>
+            <div>
+                <a href="./"><img class="logo" src="../img/logo_tasso.svg" width="140" alt="Logo Tasso" /></a>
+            </div>
+        </div>
+        <div align="right" margin-right>
+          <a href="/"><h1 class="regular_dark_montSerra">Accueil</h1></a>
+        </div>
+      </div>
+    </br></br></br></br>
+      <div class="row" align="center">
+        <div class="login_form" align="center">
+          <h1 class="regular_blue_montSerra" align="center">Connexion</h1>
+          <% if (message.length > 0 && type == "error") { %>
+            <div class="alert alert-danger"><%= message %></div>
+          <% } %>
+          <% if (message.length > 0 && type == "success") { %>
+            <div id="alert-success-div" class="alert alert-success"><%= message %></div>
+          <% } %>
+          <form name="login_form" id="login_form" method="post">
+              <div class="form-group">
+                <input id="login_email" type="text" class="input_top" name="email" placeholder="Email" required="true">
+                <input id="login_password" type="password" class="input_bot" name="password" placeholder="Mot de passe" required="true">
+              </div>
+              <div class="form-group">
+              </br>
+                <a class="hidden_link" href="./forgot_password"><p class="regular_dark_openSans"> Mot de passe oubli&eacute;?</p></a>
+              </div>
+              <div align="center" class="form-group">
+                <button type="submit" class="btn blue_button">SE CONNECTER</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </br>
+        <div class="row" align="center">
+          <p class="regular_dark_openSans"> Vous n'avez pas encore de compte ? </p>
+        </div>
+        <div class="row" align="center">
+            <a class="hidden_link" href="./registration"><button type="submit" class="btn red_button">S'INSCRIRE</button></a>
+          </div>
+        </div>
+  </body>
+</html>
