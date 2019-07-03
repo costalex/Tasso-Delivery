@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Mon Compte</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1.-Mon-compte---Accueil---Simple" transform="translate(-1129.000000, -38.000000)" fill="#121435">
+            <g id="Top-menu" transform="translate(1015.000000, 38.000000)">
+                <g id="Mon-Compte" transform="translate(114.000000, 0.000000)">
+                    <ellipse id="Oval" cx="11" cy="9.4314" rx="4.4" ry="4.48726667"></ellipse>
+                    <path d="M11,0 C4.92482222,0 0,4.92482222 0,11 C0,17.0751778 4.92482222,22 11,22 C17.0751778,22 22,17.0751778 22,11 C22,4.92482222 17.0751778,0 11,0 L11,0 Z M17.7513111,17.7239333 C16.3105556,16.3244889 13.8252889,15.4 11,15.4 C8.17471111,15.4 5.68944444,16.3244889 4.24868889,17.7239333 C2.53048889,15.9986444 1.46666667,13.6214222 1.46666667,11 C1.46666667,5.74322222 5.74322222,1.46666667 11,1.46666667 C16.2567778,1.46666667 20.5333333,5.74322222 20.5333333,11 C20.5333333,13.6214222 19.4695111,15.9986444 17.7513111,17.7239333 L17.7513111,17.7239333 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

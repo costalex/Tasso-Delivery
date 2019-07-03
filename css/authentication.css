@@ -1,0 +1,342 @@
+/* Personnalisation globale des pages */
+.wrapper {
+    margin: 0 auto;
+    padding: 10px 10px 0 10px;
+    overflow: hidden;
+    max-width: 1200px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.page-wrap-home {
+	position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+	padding-bottom: 50px;
+}
+
+/* Personnalisation des input formulaire */
+
+.input_top {
+	background-color: #F9F9F9;
+  color: #9B9B9B;
+  text-decoration: none;
+	text-indent: 10px;
+	height: 40px;
+	width: 270px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: none;
+	border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8;
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+
+}
+
+.input_middle{
+	background-color: #F9F9F9;
+	text-indent: 10px;
+  color: #9B9B9B;
+	height: 40px;
+	width: 270px;
+	border: none;
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.input_bot {
+	background-color: #F9F9F9;
+	text-indent: 10px;
+  color: #9B9B9B;
+	height: 40px;
+	width: 270px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: none;
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.input {
+	background-color: #F9F9F9;
+	text-indent: 10px;
+  color: #9B9B9B;
+	height: 40px;
+	width: 270px;
+	border: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-left: 1px solid #D8D8D8;
+	border-right: 1px solid #D8D8D8;
+	border-top: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.has-error .help-block {
+	color: #D41E1A;
+  border-color: #D41E1A;
+}
+
+.has-error .input-group-addon {
+	color: #D41E1A;
+  background-color: #f2dede;
+  border-color: #D41E1A;
+}
+
+.no_border_margin {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.form-control_error {
+	background-color: #F9F9F9;
+	text-indent: 10px;
+  color: #9B9B9B;
+	height: 40px;
+	width: 270px;
+	border: none;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-left: 1px solid #a94442;
+	border-right: 1px solid #a94442;
+	border-top: 1px solid #a94442;
+	border-bottom: 1px solid #a94442;
+}
+
+/* Chargement des polices personnalisées */
+
+@font-face {
+	font-family: 'Mont Serrat';
+	src: url('../fonts/Montserrat/Montserrat-Light.eot');
+	src: url('../fonts/Montserrat/Montserrat-Light.woff') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Light.woff2') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+
+@font-face {
+	font-family: 'Mont Serrat';
+	font-weight: bold;
+	src: url('../fonts/Montserrat/Montserrat-Regular.eot');
+	src: url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/Open_Sans/OpenSans-Regular.eot');
+	src: url('../fonts/Open_Sans/OpenSans-Regular.woff') format('woff'),
+			 url('../fonts/Open_Sans/OpenSans-Regular.woff2') format('woff'),
+			 url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-weight: bold;
+	src: url('../fonts/Open_Sans/OpenSans-Semibold.eot');
+	src: url('../fonts/Open_Sans/OpenSans-Semibold.woff') format('woff'),
+			 url('../fonts/Open_Sans/OpenSans-Semibold.woff2') format('woff'),
+			 url('../fonts/Open_Sans/OpenSans-Semibold.ttf') format('truetype');
+}
+
+.regular_dark_openSans {
+	font-family: "Open Sans", Verdana, Sans-serif;
+	font-size: 15px;
+	color: #093765;
+}
+
+.regular_small_dark_openSans {
+	font-family: "Open Sans", Verdana, Sans-serif;
+	font-size: 13px;
+	color: #093765;
+}
+
+.regular_dark_montSerra {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+	padding-right: 10px;
+	font-size: 14px;
+  color: #093765;
+}
+
+.regular_blue_montSerra {
+	padding-bottom: 20px;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	color: #1785FB;
+}
+
+.regular_small_blue_montSerra {
+	padding-bottom: 20px;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #1785FB;
+}
+
+/* registration and login page */
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.authentication {
+  margin:0;
+  padding:0;
+  background: url('../img/background.svg') no-repeat center fixed;
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+}
+
+.logo_Tasso {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-weight: bold;
+	font-size: 1.620em;
+  color: #093765;
+	margin-left: 8px;
+  float: left;
+	padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  position: relative;
+  top: 2px;
+  left: 10px;
+}
+
+.logo {
+	float:left;
+}
+
+.blue_button{
+	align-items: center;
+	align-self: center;
+	background-color: #1785FB;
+	-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	-o-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	width: 140px;
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.red_button{
+	align-items: center;
+	align-self: center;
+	background-color: #F24440;
+	-moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	-o-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 9px;
+	width: 140px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.blue_button:hover, .blue_button:focus {
+	background-color: #1785FB;
+	color: white;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+.red_button:hover, .red_button:focus {
+	background-color: #F24440;
+	color: white;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+.registration_form {
+	padding: 20px;
+	align-self: center;
+	width: 310px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login_form {
+	padding: 10px;
+	align-self: center;
+	width: 300px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.forgotPassword_form {
+	padding: 10px;
+	align-self: center;
+	width: 300px;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hidden_link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sign_btn {
+	padding-bottom: 60px;
+}
+
+.password_popover {
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	font-size: 14px;
+  color: #093765;
+}
+
+.no_padding {
+	padding: 0;
+}
+
+#rc-imageselect,
+.g-recaptcha {
+	transform:scale(0.80);
+	transform-origin:0;
+	transform:scale(0.80);
+	transform-origin:0 0;
+	-webkit-transform:scale(0.80);
+	transform:scale(0.80);
+	-webkit-transform-origin:0 0;
+	transform-origin:0 0;
+}

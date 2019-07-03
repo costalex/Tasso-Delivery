@@ -1,0 +1,1241 @@
+html {
+  overflow: auto;
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 10px 10px 0 10px;
+    overflow: hidden;
+    max-width: 1200px;
+    padding-top: 10px;
+    position: relative;
+}
+
+/** Généralités` **/
+
+@font-face {
+	font-family: 'Mont Serrat';
+	src: url('../fonts/Montserrat/Montserrat-Regular.eot');
+	src: url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Mont Serrat';
+	font-weight: bold;
+	src: url('../fonts/Montserrat/Montserrat-SemiBold.eot');
+	src: url('../fonts/Montserrat/Montserrat-SemiBold.woff') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-SemiBold.woff2') format('woff'),
+			 url('../fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+.bold_blue_montSerra {
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	font-weight: bold;
+	color: #1785FB;
+}
+
+.regular_dark_montSerra {
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	color: #121435;
+}
+
+.regular_blue_montSerra {
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	font-weight: bold;
+	color: #1785FB;
+}
+
+h1 {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-size: 2em;
+  color:#121435;
+  /*font-weight: 400;*/
+}
+
+h2 {
+  font-family: "Open Sans", Verdana, Sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  color: #fff;
+  line-height: 1.4em;
+}
+
+h3 {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+h5 {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-size: 1.1em;
+  font-weight: 200;
+}
+
+p {
+  font-family: "Open Sans", Verdana, Sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #000;
+}
+
+button, a, a:hover, a:active, a:link, a:visited {
+  text-decoration: none;
+
+}
+
+.newsletter_btn {
+  	align-items: center;
+  	align-self: center;
+  	background-color: #1785FB;
+  	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  	-o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  	color: white;
+    font-size: 13px;
+    line-height: 1.42857143;
+  	font-family: "Mont Serrat", Verdana, Sans-serif;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+    padding-left: 5px;
+  	padding: 10px;
+    height: 40px;
+  	border-radius: 5px;
+}
+
+.blue_button{
+	align-items: center;
+	align-self: center;
+	background-color: #1785FB;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+  height: 40px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.red_button{
+	align-items: center;
+	align-self: center;
+	background-color: #F24440;
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Mont Serrat", Verdana, Sans-serif;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 9px;
+  width: 120px;
+  height: 40px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.red_button:hover, .red_button:focus {
+	background-color: #F24440;
+	color: white;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+.blue_button:hover, .blue_button:focus, .newsletter_btn:hover, .newsletter_btn:focus {
+	background-color: #1785FB;
+	color: white;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/** NAVIGATION / MENU **/
+.logo {
+  float: left;
+  width: 140px;
+}
+
+nav.menu {
+  float: right;
+}
+
+nav.menu ul {
+  list-style-type: none;
+}
+
+nav.menu ul li {
+  display: inline-block;
+}
+
+nav.menu ul li a {
+  display: block;
+  line-height: 40px;
+  margin: 0 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:400;
+  font-size: 1em;
+  color:#121435;
+}
+
+nav.menu ul li a:hover {
+  color: #1785FB;
+  cursor: pointer;
+}
+
+nav.menu ul li a.connexion {
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #1785FB;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+
+nav.menu ul li a.connexion:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+/** RESPONSIVE MENU - BURGER MENU **/
+@media only screen and (max-width: 768px) {
+
+    nav.menu {
+      display: none;
+    }
+
+    .hamburger, .cross {
+      background:none;
+      position:absolute;
+      top:0;
+      right:0;
+      line-height:45px;
+      padding:5px 15px 0px 15px;
+      color:#121435;
+      border:0;
+      font-size:2em;
+      font-weight:bold;
+      cursor:pointer;
+      outline:none;
+      z-index:10;
+    }
+
+    .responsive-menu {
+      z-index:9;
+      margin: 0 auto;
+      width:60%;
+      background:#fff;
+      position:absolute;;;
+      text-align:center;
+      top: 50px;
+      right: 4%;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(23, 55, 87, 0.2);
+    }
+
+    .responsive-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      list-style-image: none;
+      display: inline-block;
+    }
+
+    .responsive-menu a {
+      display: block;
+      padding:15px 0 15px 0;
+      text-decoration:none;
+      color:#121435;
+      font-family: "Mont Serrat", Verdana, Sans-serif;
+      font-weight: 300;
+      font-size: 1.4em;
+    }
+
+    .responsive-menu a:hover {
+      text-decoration:none;
+      color:#1785FB;
+    }
+
+    .responsive-menu li:last-child a {
+      color:#1785FB;
+      font-weight: 400;
+    }
+}
+
+@media (min-width: 768px) {
+  .hamburger, .cross, .responsive-menu {
+    display: none;
+  }
+}
+
+/*********** DROP DOWN *********/
+.dropdwn {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdwn-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    border-radius: 5px;
+    margin-top: 8px;
+    height: 60px;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 21px;
+}
+
+.dropdwn-content p {
+    color: #1785FB;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdwn:hover .dropdwn-content {
+    display: block;
+}
+
+/** WINDSHIELD **/
+.windshield {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background: linear-gradient(rgb(232, 238, 242), rgb(211, 221, 228) 200px);
+  background: -webkit-linear-gradient(bottom left, rgb(211, 221, 228), rgb(232, 238, 242)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top right, rgb(211, 221, 228), rgb(232, 238, 242)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top right, rgb(211, 221, 228), rgb(232, 238, 242)); /*Fx 3.6-15*/
+  background: linear-gradient(to top right, rgb(211, 221, 228), rgb(232, 238, 242)); /*Standard*/
+}
+
+.windshield-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/showcase/pattern_blue.svg);
+  background-size: 200px 200px;
+  opacity: 0.05;
+}
+
+.intro {
+  margin-top: 180px;
+  text-align: center;
+  clear: both;
+}
+
+/** ENGAGEMENTS **/
+.engagements {
+  position: relative;
+  max-width: 90%;
+  z-index: 1;
+  margin-top: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(23, 55, 87, 0.2);
+  padding: 15px 50px 10px 50px;
+}
+
+@media (min-width: 768px) {
+  .engagements {
+    margin-top: 100px;
+  }
+}
+
+.engagements .row h3 {
+  margin-bottom: 30px;
+}
+
+.engagement {
+  padding-bottom: 20px;
+}
+
+.engagement h4::before {
+  position: absolute;
+  margin-left: -35px;
+}
+
+.engagement:nth-child(2) h4::before {
+  content: url(../img/showcase/envoie_icon.svg);
+}
+
+.engagement:nth-child(3) h4::before {
+  content: url(../img/showcase/rapidite_icon.svg);
+  margin-left: -48px;
+}
+
+.engagement:nth-child(4) h4::before {
+  content: url(../img/showcase/securite_icon.svg);
+}
+
+.engagement h4 {
+  margin-left: 35px;
+  margin-bottom: 22px;
+}
+
+.engagement:nth-child(3) h4 {
+  margin-left: 48px;
+}
+
+.engagement p {
+  line-height: 1.5em;
+}
+
+/** ABOUT MAP **/
+.about-map {
+  margin-top: 60px;
+  width: 90%;
+}
+
+.map {
+  width: 60%;
+}
+
+.about-map .row div:nth-child(1) {
+  text-align: center;
+}
+.about-map .row div:nth-child(2) {
+  margin-top: 30px;
+}
+
+/** CCM **/
+.ccm {
+  margin-top: 80px;
+  width: 100%;
+  position: relative;
+}
+
+.ccm h3 {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+.card {
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(23, 55, 87, 0.2);
+  display: inline-block;
+  min-height: 300px;
+  margin: 15px 0;
+}
+
+@media (min-width: 300px) and (max-width: 375px) {
+  .ccm {
+    width: 90%;
+  }
+  .card {
+    padding: 20px 30px;
+  }
+}
+
+.card p:first-of-type {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-weight: 500;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.ccm h4 {
+  padding-left: 35px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.ccm div:nth-child(1) h4::before {
+  margin-left: -35px;
+  margin-right: 35px;
+  float: left;
+}
+
+.ccm div:nth-child(2) h4::before {
+  content: url(../img/showcase/bell_icon.svg);
+}
+
+.ccm div:nth-child(3) h4::before {
+  content: url(../img/showcase/package_icon.svg);
+}
+
+.ccm div:nth-child(4) h4::before {
+  content: url(../img/showcase/courier_icon.svg);
+}
+
+.card p:last-of-type {
+  margin-top: 20px;
+  clear: both;
+}
+
+.question-faq {
+  text-align: center;
+}
+
+.question-faq h4 {
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.question-faq button {
+  border-radius: 4px;
+  background-color:#162945;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(23, 55, 87, 0.2);
+  transform: translateY(-1px);
+  color: #87bbfd;
+  width: 150px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+}
+
+.question-faq button:hover {
+  background-color: #333464;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+@media (min-width: 1148px) {
+  .card  {
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1148px) {
+  .ccm .card-container {
+    padding: 0 5px;
+  }
+
+  .ccm div:nth-child(1) h4 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .ccm div:nth-child(1) h4::before {
+    margin: 0;
+    float: none;
+    display: block;
+    padding-bottom: 15px;
+  }
+
+  .card  {
+    padding: 20px 30px;
+    min-height: 349px;
+  }
+}
+
+@media (min-width: 799px) and (max-width: 976px) {
+  .card  {
+    min-height: 391px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 799px) {
+
+.card {
+    min-height: 406px;
+  }
+}
+
+@media (min-width: 976px) and (max-width: 1071px) {
+  .card  {
+    min-height: 364px;
+  }
+}
+
+/** AVANTAGES **/
+.avantages {
+  margin-top: 80px;
+  text-align: center;
+  width: 100%;
+}
+
+.avantages h3 {
+  margin: 20px 0 40px;
+}
+
+.avantage {
+  min-height: 340px;
+}
+
+.avantage h4:first-of-type::before {
+  display: block;
+  margin-bottom: 20px;
+  min-height: 80px;
+  vertical-align: middle;
+}
+
+.avantage:nth-child(2) h4::before {
+  content: url(../img/showcase/facile_icon.svg);
+}
+
+.avantage:nth-child(3) h4::before {
+  content: url(../img/showcase/securise_icon.svg);
+}
+
+.avantage:nth-child(4) h4::before {
+  content: url(../img/showcase/abordable_icon.svg);
+}
+
+.avantage:nth-child(5) h4::before {
+  content: url(../img/showcase/rapide_icon.svg);
+}
+
+.avantage:nth-child(6) h4::before {
+  content: url(../img/showcase/horaire_icon.svg);
+}
+
+.avantage:nth-child(7) h4::before {
+  content: url(../img/showcase/ecologique_icon.svg);
+}
+
+/** CONFIANCE APPS **/
+.confiance-apps h3 {
+  text-align: center;
+}
+
+.confiance-apps .row {
+  margin-top: -50px;
+}
+
+.confiance-apps .row div {
+  padding-top: 50px;
+}
+
+.confiance {
+  text-align: center;
+}
+
+.confiance img {
+  height: 25px;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 0;
+  padding-left: 20px;
+}
+
+.confiance img:nth-child(2) {
+  height: 70px !important;
+  padding: 0;
+}
+
+.apps {
+  text-align: center;
+}
+
+.apps h3, .confiance h3 {
+  margin-bottom: 30px;
+}
+
+.apps img:first-child {
+  width: 135px;
+  height: 40px;
+}
+
+.apps img:last-child {
+  width: 152px;
+  height: 60px;
+}
+
+/********************************/
+/******** PAGE TARIFS ***********/
+/********************************/
+
+.margin_row_tarif {
+  margin-left: 0px;
+}
+
+@media (min-width: 768px) {
+  .margin_row_tarif {
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .table-responsive>.table>tbody>tr>td {
+    white-space: initial;
+  }
+}
+
+.tarifs-windshield {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background: linear-gradient(rgb(232, 238, 242), rgb(211, 221, 228) 200px);
+}
+
+.tarifs-intro {
+  margin-top: 180px;
+  text-align: center;
+}
+
+.tarifs-intro h1, .contact-intro h1, .intro h1 {
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  font-weight: 500;
+  color: #1785FB;
+}
+
+.tarifs-intro h2, .contact-intro h2, .intro h2{
+  font-family: "Open Sans", Verdana, Sans-serif;
+  font-weight: 300;
+  color: #162945;
+}
+
+/** PAGE TARIFS - ENCART TARIFS **/
+
+.tarif {
+  position: relative;
+  max-width: 95%;
+  margin-top: 102px;
+  margin-bottom: 30px;
+  text-align: center;
+  min-height: 531px;
+}
+
+.tarif table {
+  height: 478px;
+}
+
+.tarif th {
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #162945;
+}
+
+.table-bordered>thead>tr>th {
+  border-bottom-width: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.tarif tr td, .table>tbody>tr>td {
+  vertical-align: middle;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #162945;
+}
+
+.tarif tr td:first-child {
+  text-align: left;
+}
+
+.tarif h3 {
+  font-weight: 300;
+}
+
+.tarif h4 {
+  font-weight: 400;
+}
+
+.tarifs {
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tarifs h3, .forfaits h3 {
+  height: 50px;
+  display: block;
+}
+
+.tarifs h3 {
+  color: #1785FB;
+}
+
+.tarifs h5 {
+  color: #8898aa;
+}
+
+.tarifs, .forfaits {
+  box-shadow: 0 5px 15px rgba(23, 55, 87, 0.2);
+  min-height: 478px;
+}
+
+.tarifs .multi-padding-top {
+  padding-top: 40px;
+}
+
+.tarifs p:nth-of-type(2), .forfaits p:nth-of-type(2), .pas-desservi p {
+  font-weight: 400;
+}
+
+.prix-km-supp {
+  display: inline-block;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.prix-km-supp p {
+  font-family: "Open Sans", Verdana, Sans-serif !important;
+  font-weight: 300 !important;
+  font-size: .9em !important;
+  color: #000 !important;
+  padding: 0;
+}
+
+.prix-km-supp button, .pas-desservi button {
+  border-radius: 4px;
+  background-color:#1785FB;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(23, 55, 87, 0.2);
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  margin-top: 40px;
+}
+
+.prix-km-supp button:hover, .forfaits button:hover, .pas-desservi button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+.forfaits button {
+  border-radius: 4px;
+  background-color:#24b47e;
+  border: 0;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+  margin-top: 40px;
+}
+
+.forfaits {
+  background-color: #162945;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.forfaits h3 {
+  border-bottom: 2px solid rgba(85,90,191,.1);
+  color: #87bbfd;
+}
+
+.forfaits h4, .forfaits p:nth-of-type(2) {
+  color: #cfd7df
+}
+
+.forfaits h4 {
+  margin-bottom: 36px;
+}
+
+.forfaits p:nth-of-type(1) {
+  color:#87bbfd;
+  font-family: "Montserrat", sans-serif;;
+  font-size: 3em;
+  font-weight: 500;
+}
+
+.limite-validite {
+  margin-top: 30px;
+}
+
+.limite-validite p {
+  font-family: "Open Sans", Verdana, Sans-serif !important;
+  font-weight: 300 !important;
+  font-size: .9em !important;
+  color: #cfd7df !important;
+}
+
+.forfaits .entreprise-padding-top {
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .tarifs {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .tarifs h5 {
+    height: 37px;
+  }
+
+  .forfaits {
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .forfaits h4 {
+    height: 42px;
+  }
+
+  .forfaits .limite-validite {
+    margin-top: 43px;
+  }
+
+  .tarifs .multi-padding-top, .forfaits .entreprise-padding-top {
+    padding-top: 0px;
+  }
+}
+
+@media (min-width: 997px) {
+  .tarifs h5 {
+    height: auto;
+  }
+
+  .forfaits h4 {
+    height: auto;
+  }
+
+  .forfaits .limite-validite {
+    margin-top: 30px;
+  }
+}
+
+/** SECTEURS DESSERVIS **/
+
+.secteur {
+  text-align: center;
+}
+
+.secteur span {
+  color: #1785FB;
+}
+
+.secteur p {
+  margin: 40px 0 60px 0;
+}
+
+.secteur .map-bordeaux, .secteur .desserte-bordeaux {
+  margin-top: 30px;
+}
+
+.secteur .map-bordeaux img {
+  width: 80%;
+  box-shadow: 0 1px 2px rgba(23, 55, 87, 0.2);
+}
+
+.secteur .desserte-bordeaux {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.secteur .desserte-bordeaux h4 {
+  text-align: center;
+}
+
+.secteur ul {
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+}
+
+.secteur li {
+  padding: 10px 0 10px 30px;
+  font-family: "Open Sans", Verdana, Sans-serif;;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.secteur li::before {
+  content: url(../img/showcase/check-icon.svg);
+  position: absolute;
+  margin-left: -30px;
+  padding-top: 2px;
+}
+
+/*.secteur li:last-child::before {
+  content: url(../img/showcase/soon-icon.svg) !important;
+  position: absolute;
+  margin-left: -30px;
+  padding-top: 2px;
+}*/
+
+.pas-desservi {
+  text-align: center;
+}
+
+.pas-desservi p, .secteur p {
+  color: #4A4A4A;
+}
+
+.pas-desservi button {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .secteur .desserte-bordeaux h4 {
+    text-align: left;
+  }
+}
+
+/********************************/
+/*********** VILLES *************/
+/********************************/
+
+.villes {
+  margin-top: 140px;
+}
+
+.villes-windshield {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background-image: url(../img/showcase/europe-map.svg);
+  background-repeat: no-repeat;
+  background-position: right 80%;
+  background-size: 550px;
+  background-color: #F8FAFD;
+  z-index: -2
+}
+
+@media screen and (min-width: 768px) {
+  .villes-windshield {
+    height: 520px;
+  }
+}
+
+/********************************
+********** CONTACT **************
+********************************/
+
+.div_contact_form {
+	padding: 30px;
+	padding-bottom: 10px;
+}
+
+.contact-windshield {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  background: linear-gradient(rgb(232, 238, 242), rgb(211, 221, 228) 200px);
+  /**background-color: #87bbfd /**#162945 **/;
+}
+
+.size_block_message {
+  max-width: 100%;
+	min-width: 50%;
+}
+
+.contact-intro {
+  margin-top: 180px;
+  text-align: center;
+}
+
+.formulaire-contact {
+  min-height: 500px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(23, 55, 87, 0.2);
+  margin-top: 130px;
+  margin-bottom: 30px;
+}
+
+.submit_contact_btn {
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .formulaire-contact {
+    width: 60%;
+  }
+  .div_contact_form {
+    padding: 40px;
+    padding-bottom: 20px;
+  }
+}
+
+/********************************/
+/*********** FOOTER *************/
+/********************************/
+
+footer {
+  /*position: absolute;*/
+  bottom: 0px;
+  margin: 0 auto;
+  margin-top: 80px;
+  min-height: 200px;
+  width: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.footer-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+footer .row div {
+  margin-top: 30px;
+}
+
+footer h5 {
+  font-weight: 400;
+}
+
+footer button {
+  border-radius: 4px;
+  background-color:#1785FB;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(23, 55, 87, 0.2);
+  color: #fff;
+  width: 180px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: .9em;
+  font-weight: 300;
+}
+
+footer .send_button{
+  align-items: center;
+  align-self: center;
+  background-color: #1785FB;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Mont Serrat", Verdana, Sans-serif;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+footer button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow .3s,background-color .3s,color .3s,transform .3s;
+    transition-property: box-shadow, background-color, color, transform;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  text-align: center;
+}
+
+footer ul li a, .policies a {
+  color:#121435;
+  cursor: pointer;
+}
+
+footer ul li:nth-child(6) a {
+  color: #1785FB;
+  font-weight: 400;
+}
+
+footer ul li a:hover, .policies a:hover {
+  color: #1785FB !important;
+}
+
+ footer .row div:nth-child(even) {
+  text-align: center;
+}
+
+.policies {
+  margin: 20px 0 10px;
+  text-align: center;
+  font-size: .9em;
+}
+
+.policies-spacing {
+  padding: 0 40px;
+}
+
+@media (min-width: 768px) {
+  .about-map .row div:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+.newsletter_input {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 186px;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.newsletter_div {
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .newsletter_div {
+    padding-bottom: 15px;
+    margin-top: 10px;
+  }
+  .newsletter_input {
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+}
